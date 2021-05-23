@@ -13,8 +13,8 @@ const SIZE_M = 800;
 const SIZE_L = 1200;
 const SIZE_XL = 1600;
 const component = (
-  <Form title={'Test form'}>
-    <FormGroup title={'Group 1'}>
+  <Form heading={'Test form'}>
+    <FormGroup heading={'Group 1'}>
       <FormItem label={'item 1'}>
         <Input type={InputType.Text} />
       </FormItem>
@@ -22,7 +22,7 @@ const component = (
         <Input type={InputType.Number} />
       </FormItem>
     </FormGroup>
-    <FormGroup title={'Group 2'}>
+    <FormGroup heading={'Group 2'}>
       <FormItem label={'item 1'}>
         <Input type={InputType.Text} />
       </FormItem>
@@ -58,10 +58,10 @@ describe('Create a Form', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test("should use a single FormGroup's title as a Form title if one is not set", () => {
+  test("should use a single FormGroup's heading as a Form heading if one is not set", () => {
     const ungroupedChildren = (
       <Form>
-        <FormGroup title={'To be Form title'}>
+        <FormGroup heading={'To be Form title'}>
           <FormItem label={'item 1'}>
             <Input type={InputType.Text} />
           </FormItem>

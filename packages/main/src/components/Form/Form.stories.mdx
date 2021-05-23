@@ -29,7 +29,7 @@ import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
     ...DocsCommonProps
   }}
   args={{
-    title: 'Test Form',
+    heading: 'Test Form',
     labelSpanS: 12,
     labelSpanM: 2,
     labelSpanL: 4,
@@ -50,11 +50,11 @@ import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
 <Canvas>
   <Story name="Default">
     {(args) => (
-      <Form {...args} title={args.title}>
+      <Form {...args}>
         <FormItem label={'Sole Form Item'}>
           <Input type={InputType.Text} />
         </FormItem>
-        <FormGroup title={'Personal Data'}>
+        <FormGroup heading={'Personal Data'}>
           <FormItem label={'Name'}>
             <Input type={InputType.Text} />
           </FormItem>
@@ -75,7 +75,7 @@ import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
             <CheckBox checked />
           </FormItem>
         </FormGroup>
-        <FormGroup title={'Company Data'}>
+        <FormGroup heading={'Company Data'}>
           <FormItem label={'Company Name'}>
             <Input type={InputType.Text} />
           </FormItem>
@@ -95,7 +95,7 @@ import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
             <CheckBox checked />
           </FormItem>
         </FormGroup>
-        <FormGroup title={'Marketing Data'}>
+        <FormGroup heading={'Marketing Data'}>
           <FormItem label={'Email'}>
             <Input type={InputType.Email} />
           </FormItem>

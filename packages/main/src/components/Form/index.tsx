@@ -29,9 +29,9 @@ export interface FormPropTypes extends CommonProps {
    */
   children: ReactElement | ReactElement[];
   /**
-   * Form title
+   * Form heading
    */
-  title?: string;
+  heading?: string;
   /**
    * Form columns for small size (`< 600px`).
    * Must be a number between 1 and 12.
@@ -103,7 +103,7 @@ const useStyles = createUseStyles(styles, { name: 'Form' });
  */
 const Form: FC<FormPropTypes> = forwardRef((props: FormPropTypes, ref: Ref<HTMLDivElement>) => {
   const {
-    title,
+    heading,
     children,
     className,
     slot,
@@ -162,13 +162,13 @@ const Form: FC<FormPropTypes> = forwardRef((props: FormPropTypes, ref: Ref<HTMLD
   const [formGroups, updatedTitle] = useMemo(() => {
     const computedFormGroups: any[] = [];
 
-    if (Children.count(children) === 1 && !title && (children as ReactElement).props.title?.length > 0) {
-      return [cloneElement(children as ReactElement, { title: null }), (children as ReactElement).props.title];
+    if (Children.count(children) === 1 && !heading && (children as ReactElement).props.heading?.length > 0) {
+      return [cloneElement(children as ReactElement, { heading: null }), (children as ReactElement).props.heading];
     }
 
     const currentColumnCount = currentNumberOfColumns;
     if (currentColumnCount === 1) {
-      return [children, title];
+      return [children, heading];
     }
 
     const rows = [];
@@ -212,15 +212,15 @@ const Form: FC<FormPropTypes> = forwardRef((props: FormPropTypes, ref: Ref<HTMLD
           paddingTop: '1rem'
         };
 
-        if (cell?.props?.title) {
+        if (cell?.props?.heading) {
           computedFormGroups.push(
             <h6
               style={titleStyles}
-              title={cell.props.title}
-              aria-label={cell.props.title}
+              title={cell.props.heading}
+              aria-label={cell.props.heading}
               key={`title-col-${columnIndex}-row-${totalRowCount}`}
             >
-              {cell.props.title}
+              {cell.props.heading}
             </h6>
           );
         }
@@ -252,8 +252,8 @@ const Form: FC<FormPropTypes> = forwardRef((props: FormPropTypes, ref: Ref<HTMLD
       }
     });
 
-    return [computedFormGroups, title];
-  }, [children, currentRange, title, currentNumberOfColumns, currentLabelSpan]);
+    return [computedFormGroups, heading];
+  }, [children, currentRange, heading, currentNumberOfColumns, currentLabelSpan]);
   const passThroughProps = usePassThroughHtmlProps(props);
 
   const formClassNames = StyleClassHelper.of(classes.form)

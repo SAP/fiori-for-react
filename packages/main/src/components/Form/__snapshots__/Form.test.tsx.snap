@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Create a Form should use a single FormGroup's title as a Form title if one is not set 1`] = `
+exports[`Create a Form should use a single FormGroup's heading as a Form heading if one is not set 1`] = `
 <DocumentFragment>
   <div
     class="Form-form Form-labelSpan4"

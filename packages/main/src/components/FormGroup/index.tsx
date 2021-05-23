@@ -5,9 +5,9 @@ import { createUseStyles } from 'react-jss';
 
 export interface FormGroupProps {
   /**
-   * Title of the FormGroup.
+   * Heading of the FormGroup.
    */
-  title: string;
+  heading: string;
   /**
    * Contents of the FormGroup. Please use only `FormItem` to keep the intended design.
    */
@@ -36,17 +36,17 @@ const useStyles = createUseStyles(
 );
 /**
  * The `FormGroup` encapsulates `FormItems` into groups.
- * __Note:__ `FormGroup` is only used for calculating the final layout of the `Form`, thus it doesn't accept any other props than `title` and `children`, especially no `className`, `style` or `ref`.
+ * __Note:__ `FormGroup` is only used for calculating the final layout of the `Form`, thus it doesn't accept any other props than `heading` and `children`, especially no `className`, `style` or `ref`.
  */
 const FormGroup: FC<FormGroupProps> = (props: FormGroupProps) => {
-  const { title, children } = props;
+  const { heading, children } = props;
 
   const classes = useStyles();
 
   return (
     <>
-      <h6 className={classes.title} title={title} aria-label={title}>
-        {title}
+      <h6 className={classes.title} title={heading} aria-label={heading}>
+        {heading}
       </h6>
       {children}
       <span className={classes.spacer} />
