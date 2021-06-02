@@ -49,7 +49,7 @@ describe('MessageBox', () => {
   test('Show', () => {
     const callback = jest.fn();
     const { asFragment, unmount } = render(
-      <MessageBox open onClose={callback} title="Custom" actions={[MessageBoxActions.YES, MessageBoxActions.NO]}>
+      <MessageBox open onClose={callback} heading="Custom" actions={[MessageBoxActions.YES, MessageBoxActions.NO]}>
         Custom
       </MessageBox>
     );
@@ -71,13 +71,14 @@ describe('MessageBox', () => {
         type={MessageBoxTypes.SUCCESS}
         open
         onClose={callback}
-        title="Custom Success"
+        heading="Custom Success"
         icon={<Icon name="add" />}
       >
         Custom Success
       </MessageBox>
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(screen.getAllByText('Custom Success')).toHaveLength(2);
 
     fireEvent.click(screen.getByText('OK'));
     expect(callback.mock.calls[0][0].detail.action).toEqual(MessageBoxActions.OK);
@@ -87,7 +88,7 @@ describe('MessageBox', () => {
   test('Not open', () => {
     const callback = jest.fn();
     const { asFragment, unmount } = render(
-      <MessageBox type={MessageBoxTypes.SUCCESS} open={false} onClose={callback} title="Custom Success">
+      <MessageBox type={MessageBoxTypes.SUCCESS} open={false} onClose={callback} heading="Custom Success">
         Custom Success
       </MessageBox>
     );

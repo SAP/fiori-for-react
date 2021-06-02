@@ -56,9 +56,9 @@ export interface MessageBoxPropTypes extends CommonProps {
    */
   open?: boolean;
   /**
-   * A custom title for the MessageBox. If not present, it will be derived from the `MessageBox` type.
+   * A custom heading for the MessageBox. If not present, it will be derived from the `MessageBox` type.
    */
-  title?: string;
+  heading?: string;
   /**
    * Defines the content of the `MessageBox`.
    *
@@ -74,7 +74,7 @@ export interface MessageBoxPropTypes extends CommonProps {
    */
   icon?: ReactNode;
   /**
-   * Defines the type of the `MessageBox` with predefined title, icon, actions and a visual highlight color.
+   * Defines the type of the `MessageBox` with predefined heading, icon, actions and a visual highlight color.
    */
   type?: MessageBoxTypes;
   /**
@@ -90,7 +90,7 @@ const useStyles = createUseStyles(styles, { name: 'MessageBox' });
  * For convenience, it also provides an `open` prop, so it is not necessary to attach a `ref` to open the `MessageBox`.
  */
 const MessageBox: FC<MessageBoxPropTypes> = forwardRef((props: MessageBoxPropTypes, ref: Ref<Ui5DialogDomRef>) => {
-  const { open, type, children, className, style, tooltip, slot, title, icon, actions, onClose } = props;
+  const { open, type, children, className, style, tooltip, slot, heading, icon, actions, onClose } = props;
   const dialogRef = useConsolidatedRef<Ui5DialogDomRef>(ref);
 
   const classes = useStyles();
@@ -130,8 +130,8 @@ const MessageBox: FC<MessageBoxPropTypes> = forwardRef((props: MessageBoxPropTyp
   };
 
   const titleToRender = () => {
-    if (title) {
-      return title;
+    if (heading) {
+      return heading;
     }
     switch (type) {
       case MessageBoxTypes.CONFIRM:
@@ -225,8 +225,6 @@ MessageBox.displayName = 'MessageBox';
 
 MessageBox.defaultProps = {
   open: false,
-  title: null,
-  icon: null,
   type: MessageBoxTypes.CONFIRM,
   actions: []
 };
