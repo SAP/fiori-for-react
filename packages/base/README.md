@@ -3,37 +3,44 @@ Base Utilities for ui5-webcomponents-react
 
 ## Installation
 ```
-yarn add @ui5/webcomponents-react-base
-OR
 npm install @ui5/webcomponents-react-base --save
 ```
 
-## Modules
+## Usage
 
-### StyleClassHelper
-Concat multiple CSS Module into an instance of this class helper and place them into a react component.<br>
-Example:
-```javascript
-import { StyleClassHelper } from '@ui5/webcomponents-react-base/dist/StyleClassHelper';
-import style from 'YOUR_STYLESHEET';
+This package is a collection of internal utils for the `@ui5/webcomponents-react` project and is not intended to be used
+as a standalone library in applications. The only intended public usage is running the codemod cli:
 
-const classes = new StyleClassHelper.of(style.text);
-classes.put(style.anotherClass);
-classes.put(style.thirdClass)
+*The codemod cli is exposed starting from `@ui5/webcomponents-react-base@0.16.2`.*
 
-const MyComponent = props => (
-  <div className={classes}>
-    My Component
-  </div>
-);
+```shell
+# if you only have .js and .jsx files in your project
+npx ui5wcr-codemod [transformer-name] [file-or-directory-to-run-on]
 
-export default MyComponent;
-
+# if you are using TypeScript (.ts and .tsx)
+npx ui5wcr-codemod [transformer-name] [file-or-directory-to-run-on] --typescript
 ```
+
+### Available Transformers
+
+#### `transformLibToDist`
+`@ui5/webcomponents-react@0.15.0` changed all import paths from `/lib` to `/dist`. You can migrate your codebase (e.g. your `src` folder) by running:
+```shell
+npx ui5wcr-codemod transformLibToDist src
+# add --typescript if you are using TypeScript
+```
+
+#### `renamePropsV17`
+`@ui5/webcomponents-react@0.17.0` renamed lots of props in order to have a more consistent API. You can migrate your codebase (e.g. your `src` folder) by running:
+```shell
+npx ui5wcr-codemod renamePropsV17 src
+# add --typescript if you are using TypeScript
+```
+
 
 ## Contribute
 Please check our [Contribution Guidelines](https://github.com/SAP/ui5-webcomponents-react/blob/master/CONTRIBUTING.md).
 
 ## License
-Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
-This file is licensed under the Apache Software License, Version 2.0 except as noted otherwise in the [LICENSE](https://github.com/SAP/ui5-webcomponents-react/blob/master/LICENSE) file.
+Please see our [LICENSE](https://github.com/SAP/ui5-webcomponents-react/blob/main/LICENSE) for copyright and license information. 
+Detailed information including third-party components and their licensing/copyright information is available via the [REUSE tool](https://api.reuse.software/info/github.com/SAP/ui5-webcomponents-react).
