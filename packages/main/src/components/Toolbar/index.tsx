@@ -30,7 +30,7 @@ import { styles } from './Toolbar.jss';
 
 const useStyles = createUseStyles(styles, { name: 'Toolbar' });
 
-export interface ToolbarProptypes extends Omit<CommonProps, 'onClick'> {
+export interface ToolbarPropTypes extends Omit<CommonProps, 'onClick'> {
   /**
    * Defines the content of the `Toolbar`.
    */
@@ -61,7 +61,7 @@ export interface ToolbarProptypes extends Omit<CommonProps, 'onClick'> {
  * The content of the `Toolbar` moves into the overflow area from right to left when the available space is not enough in the visible area of the container.
  * It can be accessed by the user through the overflow button that opens it in a popover.
  */
-const Toolbar: FC<ToolbarProptypes> = forwardRef((props: ToolbarProptypes, ref: Ref<HTMLDivElement>) => {
+const Toolbar: FC<ToolbarPropTypes> = forwardRef((props: ToolbarPropTypes, ref: Ref<HTMLDivElement>) => {
   const { children, toolbarStyle, design, active, style, tooltip, className, onClick, slot } = props;
   const classes = useStyles();
   const outerContainer: RefObject<HTMLDivElement> = useConsolidatedRef(ref);

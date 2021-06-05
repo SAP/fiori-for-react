@@ -29,7 +29,7 @@ import { useObserveHeights } from '../ObjectPage/useObserveHeights';
 import styles from './DynamicPage.jss';
 import { isIE } from '@ui5/webcomponents-react-base/dist/Device';
 
-export interface DynamicPageProps extends Omit<CommonProps, 'title'> {
+export interface DynamicPagePropTypes extends Omit<CommonProps, 'title'> {
   /**
    * Determines the background color of DynamicPage.
    */
@@ -78,7 +78,7 @@ const useStyles = createUseStyles(styles, { name: 'DynamicPage' });
  * The header of the dynamic page is collapsible, which helps users to focus on the actual page content, but still ensures that important header information
  * and actions are readily available.
  */
-const DynamicPage: FC<DynamicPageProps> = forwardRef((props: DynamicPageProps, ref: Ref<HTMLDivElement>) => {
+const DynamicPage: FC<DynamicPagePropTypes> = forwardRef((props: DynamicPagePropTypes, ref: Ref<HTMLDivElement>) => {
   const {
     title,
     header,

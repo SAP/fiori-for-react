@@ -8,7 +8,7 @@ import React, { CSSProperties, FC, forwardRef, RefObject, useEffect, useMemo, us
 import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { styles } from './Loader.jss';
 
-export interface LoaderProps extends CommonProps {
+export interface LoaderPropTypes extends CommonProps {
   /**
    * Delay in ms until the Loader will be displayed
    */
@@ -30,7 +30,7 @@ const useStyles = createUseStyles(styles, { name: 'Loader' });
  * The `Loader` signals that an operation is currently being executed. It uses as little space as possible to allow the user to interact with the UI.<br />
  * It can be used to signal a data update on an already existing dataset, or where an expansion will happen.
  */
-const Loader: FC<LoaderProps> = forwardRef((props: LoaderProps, ref: RefObject<HTMLDivElement>) => {
+const Loader: FC<LoaderPropTypes> = forwardRef((props: LoaderPropTypes, ref: RefObject<HTMLDivElement>) => {
   const { className, type, progress, tooltip, slot, style, delay } = props;
   const classes = useStyles();
   const [isVisible, setIsVisible] = useState(delay === 0);

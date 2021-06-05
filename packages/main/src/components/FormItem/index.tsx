@@ -5,7 +5,7 @@ import { Label, LabelPropTypes } from '@ui5/webcomponents-react/dist/Label';
 import React, { cloneElement, CSSProperties, FC, isValidElement, ReactElement, ReactNode, ReactNodeArray } from 'react';
 import { createUseStyles } from 'react-jss';
 
-export interface FormItemProps {
+export interface FormItemPropTypes {
   /**
    * Label of the FormItem. Can be either a string or a `Label` component.
    */
@@ -16,7 +16,7 @@ export interface FormItemProps {
   children: ReactNode | ReactNodeArray;
 }
 
-interface InternalProps extends FormItemProps {
+interface InternalProps extends FormItemPropTypes {
   columnIndex?: number;
   labelSpan?: number;
   rowIndex?: number;
@@ -75,7 +75,7 @@ const renderLabel = (
 /**
  * The `FormItem` is only used for calculating the final layout of the `Form`, thus it doesn't accept any other props than `label` and `children`, especially no `className`, `style` or `ref`.
  */
-const FormItem: FC<FormItemProps> = (props: FormItemProps) => {
+const FormItem: FC<FormItemPropTypes> = (props: FormItemPropTypes) => {
   const { label, children, columnIndex, rowIndex, labelSpan, lastGroupItem } = props as InternalProps;
 
   const classes = useStyles();

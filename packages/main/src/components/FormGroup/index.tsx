@@ -3,7 +3,7 @@ import { ThemingParameters } from '@ui5/webcomponents-react-base/dist/ThemingPar
 import React, { FC, ReactNode, ReactNodeArray } from 'react';
 import { createUseStyles } from 'react-jss';
 
-export interface FormGroupProps {
+export interface FormGroupPropTypes {
   /**
    * Title of the FormGroup.
    */
@@ -38,7 +38,7 @@ const useStyles = createUseStyles(
  * The `FormGroup` encapsulates `FormItems` into groups.
  * __Note:__ `FormGroup` is only used for calculating the final layout of the `Form`, thus it doesn't accept any other props than `title` and `children`, especially no `className`, `style` or `ref`.
  */
-const FormGroup: FC<FormGroupProps> = (props: FormGroupProps) => {
+const FormGroup: FC<FormGroupPropTypes> = (props: FormGroupPropTypes) => {
   const { title, children } = props;
 
   const classes = useStyles();

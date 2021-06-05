@@ -14,7 +14,7 @@ import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { DynamicPageTitleStyles } from './DynamicPageTitle.jss';
 import { isIE } from '@ui5/webcomponents-react-base/dist/Device';
 
-export interface DynamicPageTitleProps extends CommonProps {
+export interface DynamicPageTitlePropTypes extends CommonProps {
   /**
    * The `DynamicPageTitle` actions.
    */
@@ -51,7 +51,7 @@ export interface DynamicPageTitleProps extends CommonProps {
   navigationActions?: ReactElement | ReactElement[];
 }
 
-interface InternalProps extends DynamicPageTitleProps {
+interface InternalProps extends DynamicPageTitlePropTypes {
   /**
    * The onToggleHeaderContentVisibility show or hide the header section
    */
@@ -64,7 +64,7 @@ const useStyles = createUseStyles(DynamicPageTitleStyles, { name: 'DynamicPageTi
  * The dynamic page title defines the elements in the top header.
  * It can contain Breadcrumbs, Title, Subtitle, Content, KPIs and Actions.
  */
-const DynamicPageTitle: FC<DynamicPageTitleProps> = forwardRef((props: InternalProps, ref: Ref<HTMLDivElement>) => {
+const DynamicPageTitle: FC<DynamicPageTitlePropTypes> = forwardRef((props: InternalProps, ref: Ref<HTMLDivElement>) => {
   const {
     actions,
     onToggleHeaderContentVisibility,

@@ -11,7 +11,7 @@ const useStyles = createUseStyles(GlobalStyleClassesStyles);
 
 const cssVarsPonyfillNeeded = () => !!window.CSSVarsPonyfill;
 
-export interface ThemeProviderProps {
+export interface ThemeProviderPropTypes {
   children: ReactNode;
 }
 
@@ -23,7 +23,7 @@ if (!document.querySelector('style[data-ui5-webcomponents-react-sizes]')) {
   document.head.appendChild(variables);
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = (props: ThemeProviderProps) => {
+const ThemeProvider: FC<ThemeProviderPropTypes> = (props: ThemeProviderPropTypes) => {
   const { children } = props;
   useStyles();
 

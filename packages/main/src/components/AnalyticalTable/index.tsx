@@ -68,7 +68,7 @@ interface DivWithCustomScrollProp extends HTMLDivElement {
   isExternalVerticalScroll?: boolean;
 }
 
-export interface TableProps extends Omit<CommonProps, 'title'> {
+export interface AnalyticalTablePropTypes extends Omit<CommonProps, 'title'> {
   /**
    * Defines the columns array where you can define the configuration for each column.
    *
@@ -300,527 +300,532 @@ const useStyles = createUseStyles(styles, { name: 'AnalyticalTable' });
  * The `AnalyticalTable` provides a set of convenient functions for responsive table design, including virtualization of rows and columns, infinite scrolling and customizable columns that will, unless otherwise defined, distribute the available space equally among themselves.
  * It also provides several possibilities for working with the data, including sorting, filtering, grouping and aggregation.
  */
-const AnalyticalTable: FC<TableProps> = forwardRef((props: TableProps, ref: Ref<HTMLDivElement>) => {
-  const {
-    columns,
-    className,
-    style,
-    tooltip,
-    title,
-    loading,
-    groupBy,
-    selectionMode,
-    selectionBehavior,
-    onRowSelected,
-    onRowClick,
-    onSort,
-    reactTableOptions,
-    tableHooks,
-    subRowsKey,
-    onGroup,
-    rowHeight,
-    selectedRowIds,
-    LoadingComponent,
-    onRowExpandChange,
-    noDataText,
-    NoDataComponent,
-    visibleRows,
-    visibleRowCountMode,
-    minRows,
-    isTreeTable,
-    alternateRowColor,
-    overscanCount,
-    overscanCountHorizontal,
-    scaleWidthMode,
-    withRowHighlight,
-    highlightField,
-    withNavigationHighlight,
-    markNavigatedRow,
-    groupable,
-    sortable,
-    filterable,
-    infiniteScroll,
-    infiniteScrollThreshold,
-    onLoadMore,
-    extension,
-    columnOrder,
-    renderRowSubComponent,
-    alwaysShowSubComponent,
-    globalFilterValue
-  } = props;
-
-  const classes = useStyles();
-
-  const [analyticalTableRef, reactWindowRef] = useTableScrollHandles(ref);
-  const tableRef: RefObject<DivWithCustomScrollProp> = useRef();
-
-  const isRtl = useIsRTL(analyticalTableRef);
-
-  const getSubRows = useCallback((row) => row[subRowsKey] || [], [subRowsKey]);
-
-  const data = useMemo(() => {
-    if (minRows > props.data.length) {
-      const missingRows: number = minRows - props.data.length;
-      const emptyRows = Array.from({ length: missingRows }, (v, i) => i).map(() => ({ emptyRow: true }));
-
-      return [...props.data, ...emptyRows];
-    }
-    return props.data;
-  }, [props.data, minRows]);
-
-  const webComponentsReactProperties = useMemo(
-    () => ({
-      tableRef,
-      selectionMode,
-      selectionBehavior,
-      classes,
-      onRowSelected,
-      onRowClick,
-      onRowExpandChange,
-      isTreeTable,
-      alternateRowColor,
-      scaleWidthMode,
-      loading,
-      withRowHighlight,
-      highlightField,
-      withNavigationHighlight,
-      markNavigatedRow,
-      renderRowSubComponent,
-      alwaysShowSubComponent
-    }),
-    [
-      tableRef.current,
-      selectionMode,
-      selectionBehavior,
-      classes,
-      onRowSelected,
-      onRowClick,
-      onRowExpandChange,
-      isTreeTable,
-      alternateRowColor,
-      scaleWidthMode,
-      loading,
-      withRowHighlight,
-      highlightField,
-      withNavigationHighlight,
-      markNavigatedRow,
-      renderRowSubComponent,
-      alwaysShowSubComponent
-    ]
-  );
-
-  const {
-    getTableProps,
-    headerGroups,
-    rows,
-    prepareRow,
-    state: tableState,
-    columns: tableInternalColumns,
-    setColumnOrder,
-    dispatch,
-    totalColumnsWidth,
-    visibleColumns,
-    visibleColumnsWidth,
-    setGroupBy,
-    setGlobalFilter
-  } = useTable(
-    {
+const AnalyticalTable: FC<AnalyticalTablePropTypes> = forwardRef(
+  (props: AnalyticalTablePropTypes, ref: Ref<HTMLDivElement>) => {
+    const {
       columns,
-      data,
-      defaultColumn: DefaultColumn,
-      orderByFn,
-      getSubRows,
-      stateReducer,
-      disableFilters: !filterable,
-      disableSortBy: !sortable,
-      disableGroupBy: isTreeTable || renderRowSubComponent ? true : !groupable,
-      selectSubRows: false,
-      webComponentsReactProperties,
-      ...reactTableOptions
-    },
-    useFilters,
-    useGlobalFilter,
-    useColumnOrder,
-    useGroupBy,
-    useSortBy,
-    useExpanded,
-    useRowSelect,
-    useResizeColumns,
-    useRowSelectionColumn,
-    useSingleRowStateSelection,
-    useRowHighlight,
-    useRowNavigationIndicators,
-    useDynamicColumnWidths,
-    useStyling,
-    useToggleRowExpand,
-    usePopIn,
-    useVisibleColumnsWidth,
-    ...tableHooks
-  );
+      className,
+      style,
+      tooltip,
+      title,
+      loading,
+      groupBy,
+      selectionMode,
+      selectionBehavior,
+      onRowSelected,
+      onRowClick,
+      onSort,
+      reactTableOptions,
+      tableHooks,
+      subRowsKey,
+      onGroup,
+      rowHeight,
+      selectedRowIds,
+      LoadingComponent,
+      onRowExpandChange,
+      noDataText,
+      NoDataComponent,
+      visibleRows,
+      visibleRowCountMode,
+      minRows,
+      isTreeTable,
+      alternateRowColor,
+      overscanCount,
+      overscanCountHorizontal,
+      scaleWidthMode,
+      withRowHighlight,
+      highlightField,
+      withNavigationHighlight,
+      markNavigatedRow,
+      groupable,
+      sortable,
+      filterable,
+      infiniteScroll,
+      infiniteScrollThreshold,
+      onLoadMore,
+      extension,
+      columnOrder,
+      renderRowSubComponent,
+      alwaysShowSubComponent,
+      globalFilterValue
+    } = props;
 
-  const titleBarRef = useRef(null);
-  const extensionRef = useRef(null);
-  const headerRef = useRef(null);
+    const classes = useStyles();
 
-  const extensionsHeight =
-    (titleBarRef.current?.offsetHeight ?? 0) +
-    (extensionRef.current?.offsetHeight ?? 0) +
-    (headerRef.current?.offsetHeight ?? 0);
+    const [analyticalTableRef, reactWindowRef] = useTableScrollHandles(ref);
+    const tableRef: RefObject<DivWithCustomScrollProp> = useRef();
 
-  const calcRowHeight = parseInt(
-    getComputedStyle(tableRef.current ?? document.body).getPropertyValue('--sapWcrAnalyticalTableRowHeight') || '44'
-  );
-  const internalRowHeight = rowHeight ?? calcRowHeight;
-  const popInRowHeight =
-    tableState?.popInColumns?.length > 0
-      ? internalRowHeight + tableState.popInColumns.length * (internalRowHeight + 16)
-      : internalRowHeight;
+    const isRtl = useIsRTL(analyticalTableRef);
 
-  const internalVisibleRowCount = tableState.visibleRows ?? visibleRows;
+    const getSubRows = useCallback((row) => row[subRowsKey] || [], [subRowsKey]);
 
-  const updateTableClientWidth = useCallback(() => {
-    if (tableRef.current) {
-      dispatch({ type: 'TABLE_RESIZE', payload: { tableClientWidth: tableRef.current.clientWidth } });
-    }
-  }, [tableRef.current]);
+    const data = useMemo(() => {
+      if (minRows > props.data.length) {
+        const missingRows: number = minRows - props.data.length;
+        const emptyRows = Array.from({ length: missingRows }, (v, i) => i).map(() => ({ emptyRow: true }));
 
-  const updateRowsCount = useCallback(() => {
-    if (visibleRowCountMode === TableVisibleRowCountMode.AUTO && analyticalTableRef.current?.parentElement) {
-      const tableYPosition = analyticalTableRef.current?.offsetTop ?? 0;
-      const parentHeight = analyticalTableRef.current?.parentElement?.getBoundingClientRect().height;
-      const tableHeight = parentHeight ? parentHeight - tableYPosition : 0;
-      const rowCount = Math.floor((tableHeight - extensionsHeight) / popInRowHeight);
-      dispatch({
-        type: 'VISIBLE_ROWS',
-        payload: { visibleRows: rowCount }
-      });
-    }
-  }, [
-    analyticalTableRef.current?.parentElement?.getBoundingClientRect().height,
-    analyticalTableRef.current?.getBoundingClientRect().y,
-    extensionsHeight,
-    popInRowHeight,
-    visibleRowCountMode
-  ]);
+        return [...props.data, ...emptyRows];
+      }
+      return props.data;
+    }, [props.data, minRows]);
 
-  useEffect(() => {
-    setGlobalFilter(globalFilterValue);
-  }, [globalFilterValue, setGlobalFilter]);
+    const webComponentsReactProperties = useMemo(
+      () => ({
+        tableRef,
+        selectionMode,
+        selectionBehavior,
+        classes,
+        onRowSelected,
+        onRowClick,
+        onRowExpandChange,
+        isTreeTable,
+        alternateRowColor,
+        scaleWidthMode,
+        loading,
+        withRowHighlight,
+        highlightField,
+        withNavigationHighlight,
+        markNavigatedRow,
+        renderRowSubComponent,
+        alwaysShowSubComponent
+      }),
+      [
+        tableRef.current,
+        selectionMode,
+        selectionBehavior,
+        classes,
+        onRowSelected,
+        onRowClick,
+        onRowExpandChange,
+        isTreeTable,
+        alternateRowColor,
+        scaleWidthMode,
+        loading,
+        withRowHighlight,
+        highlightField,
+        withNavigationHighlight,
+        markNavigatedRow,
+        renderRowSubComponent,
+        alwaysShowSubComponent
+      ]
+    );
 
-  useEffect(() => {
-    const tableWidthObserver = new ResizeObserver(debounce(updateTableClientWidth, 500));
-    tableWidthObserver.observe(tableRef.current);
+    const {
+      getTableProps,
+      headerGroups,
+      rows,
+      prepareRow,
+      state: tableState,
+      columns: tableInternalColumns,
+      setColumnOrder,
+      dispatch,
+      totalColumnsWidth,
+      visibleColumns,
+      visibleColumnsWidth,
+      setGroupBy,
+      setGlobalFilter
+    } = useTable(
+      {
+        columns,
+        data,
+        defaultColumn: DefaultColumn,
+        orderByFn,
+        getSubRows,
+        stateReducer,
+        disableFilters: !filterable,
+        disableSortBy: !sortable,
+        disableGroupBy: isTreeTable || renderRowSubComponent ? true : !groupable,
+        selectSubRows: false,
+        webComponentsReactProperties,
+        ...reactTableOptions
+      },
+      useFilters,
+      useGlobalFilter,
+      useColumnOrder,
+      useGroupBy,
+      useSortBy,
+      useExpanded,
+      useRowSelect,
+      useResizeColumns,
+      useRowSelectionColumn,
+      useSingleRowStateSelection,
+      useRowHighlight,
+      useRowNavigationIndicators,
+      useDynamicColumnWidths,
+      useStyling,
+      useToggleRowExpand,
+      usePopIn,
+      useVisibleColumnsWidth,
+      ...tableHooks
+    );
 
-    const parentHeightObserver = new ResizeObserver(debounce(updateRowsCount, 500));
-    parentHeightObserver.observe(analyticalTableRef.current?.parentElement);
-    return () => {
-      tableWidthObserver.disconnect();
-      parentHeightObserver.disconnect();
-    };
-  }, [updateTableClientWidth, updateRowsCount]);
+    const titleBarRef = useRef(null);
+    const extensionRef = useRef(null);
+    const headerRef = useRef(null);
 
-  useIsomorphicLayoutEffect(() => {
-    dispatch({ type: 'IS_RTL', payload: { isRtl } });
-  }, [isRtl]);
+    const extensionsHeight =
+      (titleBarRef.current?.offsetHeight ?? 0) +
+      (extensionRef.current?.offsetHeight ?? 0) +
+      (headerRef.current?.offsetHeight ?? 0);
 
-  useIsomorphicLayoutEffect(() => {
-    updateTableClientWidth();
-  }, [updateTableClientWidth]);
-
-  useIsomorphicLayoutEffect(() => {
-    updateRowsCount();
-  }, [updateRowsCount]);
-
-  useEffect(() => {
-    if (tableState.visibleRows !== undefined && visibleRowCountMode === TableVisibleRowCountMode.FIXED) {
-      dispatch({
-        type: 'VISIBLE_ROWS',
-        payload: { visibleRows: undefined }
-      });
-    }
-  }, [visibleRowCountMode, tableState.visibleRows]);
-
-  useEffect(() => {
-    setGroupBy(groupBy);
-  }, [groupBy, setGroupBy]);
-
-  useEffect(() => {
-    dispatch({ type: 'SET_SELECTED_ROW_IDS', payload: { selectedRowIds } });
-  }, [selectedRowIds]);
-
-  useEffect(() => {
-    if (tableState?.interactiveRowsHavePopIn && (!tableState?.popInColumns || tableState?.popInColumns?.length === 0)) {
-      dispatch({ type: 'WITH_POPIN', payload: false });
-    }
-  }, [tableState?.interactiveRowsHavePopIn, tableState?.popInColumns?.length]);
-
-  const tableBodyHeight = useMemo(() => {
-    const rowNum = rows.length < internalVisibleRowCount ? Math.max(rows.length, minRows) : internalVisibleRowCount;
-    const rowHeight =
-      visibleRowCountMode === TableVisibleRowCountMode.AUTO || tableState?.interactiveRowsHavePopIn
-        ? popInRowHeight
+    const calcRowHeight = parseInt(
+      getComputedStyle(tableRef.current ?? document.body).getPropertyValue('--sapWcrAnalyticalTableRowHeight') || '44'
+    );
+    const internalRowHeight = rowHeight ?? calcRowHeight;
+    const popInRowHeight =
+      tableState?.popInColumns?.length > 0
+        ? internalRowHeight + tableState.popInColumns.length * (internalRowHeight + 16)
         : internalRowHeight;
-    return rowHeight * rowNum;
-  }, [
-    internalRowHeight,
-    rows.length,
-    internalVisibleRowCount,
-    minRows,
-    popInRowHeight,
-    visibleRowCountMode,
-    tableState?.interactiveRowsHavePopIn
-  ]);
 
-  // scroll bar detection
-  useEffect(() => {
-    const visibleRowCount =
-      rows.length < internalVisibleRowCount ? Math.max(rows.length, minRows) : internalVisibleRowCount;
-    if (popInRowHeight !== internalRowHeight) {
-      dispatch({
-        type: 'TABLE_SCROLLING_ENABLED',
-        payload: { isScrollable: visibleRowCount * popInRowHeight > tableBodyHeight || rows.length > visibleRowCount }
-      });
-    } else {
-      dispatch({ type: 'TABLE_SCROLLING_ENABLED', payload: { isScrollable: rows.length > visibleRowCount } });
-    }
-  }, [rows.length, minRows, internalVisibleRowCount, popInRowHeight, tableBodyHeight]);
+    const internalVisibleRowCount = tableState.visibleRows ?? visibleRows;
 
-  const noDataStyles = useMemo(() => {
-    return {
-      height: `${tableBodyHeight}px`,
-      width: `${totalColumnsWidth}px`
-    };
-  }, [tableBodyHeight, totalColumnsWidth]);
+    const updateTableClientWidth = useCallback(() => {
+      if (tableRef.current) {
+        dispatch({ type: 'TABLE_RESIZE', payload: { tableClientWidth: tableRef.current.clientWidth } });
+      }
+    }, [tableRef.current]);
 
-  const onGroupByChanged = useCallback(
-    (e) => {
-      const { column, isGrouped } = e.detail;
-      let groupedColumns = [];
-      if (isGrouped) {
-        groupedColumns = [...tableState.groupBy, column.id];
+    const updateRowsCount = useCallback(() => {
+      if (visibleRowCountMode === TableVisibleRowCountMode.AUTO && analyticalTableRef.current?.parentElement) {
+        const tableYPosition = analyticalTableRef.current?.offsetTop ?? 0;
+        const parentHeight = analyticalTableRef.current?.parentElement?.getBoundingClientRect().height;
+        const tableHeight = parentHeight ? parentHeight - tableYPosition : 0;
+        const rowCount = Math.floor((tableHeight - extensionsHeight) / popInRowHeight);
+        dispatch({
+          type: 'VISIBLE_ROWS',
+          payload: { visibleRows: rowCount }
+        });
+      }
+    }, [
+      analyticalTableRef.current?.parentElement?.getBoundingClientRect().height,
+      analyticalTableRef.current?.getBoundingClientRect().y,
+      extensionsHeight,
+      popInRowHeight,
+      visibleRowCountMode
+    ]);
+
+    useEffect(() => {
+      setGlobalFilter(globalFilterValue);
+    }, [globalFilterValue, setGlobalFilter]);
+
+    useEffect(() => {
+      const tableWidthObserver = new ResizeObserver(debounce(updateTableClientWidth, 500));
+      tableWidthObserver.observe(tableRef.current);
+
+      const parentHeightObserver = new ResizeObserver(debounce(updateRowsCount, 500));
+      parentHeightObserver.observe(analyticalTableRef.current?.parentElement);
+      return () => {
+        tableWidthObserver.disconnect();
+        parentHeightObserver.disconnect();
+      };
+    }, [updateTableClientWidth, updateRowsCount]);
+
+    useIsomorphicLayoutEffect(() => {
+      dispatch({ type: 'IS_RTL', payload: { isRtl } });
+    }, [isRtl]);
+
+    useIsomorphicLayoutEffect(() => {
+      updateTableClientWidth();
+    }, [updateTableClientWidth]);
+
+    useIsomorphicLayoutEffect(() => {
+      updateRowsCount();
+    }, [updateRowsCount]);
+
+    useEffect(() => {
+      if (tableState.visibleRows !== undefined && visibleRowCountMode === TableVisibleRowCountMode.FIXED) {
+        dispatch({
+          type: 'VISIBLE_ROWS',
+          payload: { visibleRows: undefined }
+        });
+      }
+    }, [visibleRowCountMode, tableState.visibleRows]);
+
+    useEffect(() => {
+      setGroupBy(groupBy);
+    }, [groupBy, setGroupBy]);
+
+    useEffect(() => {
+      dispatch({ type: 'SET_SELECTED_ROW_IDS', payload: { selectedRowIds } });
+    }, [selectedRowIds]);
+
+    useEffect(() => {
+      if (
+        tableState?.interactiveRowsHavePopIn &&
+        (!tableState?.popInColumns || tableState?.popInColumns?.length === 0)
+      ) {
+        dispatch({ type: 'WITH_POPIN', payload: false });
+      }
+    }, [tableState?.interactiveRowsHavePopIn, tableState?.popInColumns?.length]);
+
+    const tableBodyHeight = useMemo(() => {
+      const rowNum = rows.length < internalVisibleRowCount ? Math.max(rows.length, minRows) : internalVisibleRowCount;
+      const rowHeight =
+        visibleRowCountMode === TableVisibleRowCountMode.AUTO || tableState?.interactiveRowsHavePopIn
+          ? popInRowHeight
+          : internalRowHeight;
+      return rowHeight * rowNum;
+    }, [
+      internalRowHeight,
+      rows.length,
+      internalVisibleRowCount,
+      minRows,
+      popInRowHeight,
+      visibleRowCountMode,
+      tableState?.interactiveRowsHavePopIn
+    ]);
+
+    // scroll bar detection
+    useEffect(() => {
+      const visibleRowCount =
+        rows.length < internalVisibleRowCount ? Math.max(rows.length, minRows) : internalVisibleRowCount;
+      if (popInRowHeight !== internalRowHeight) {
+        dispatch({
+          type: 'TABLE_SCROLLING_ENABLED',
+          payload: { isScrollable: visibleRowCount * popInRowHeight > tableBodyHeight || rows.length > visibleRowCount }
+        });
       } else {
-        groupedColumns = tableState.groupBy.filter((group) => group !== column.id);
+        dispatch({ type: 'TABLE_SCROLLING_ENABLED', payload: { isScrollable: rows.length > visibleRowCount } });
       }
-      setGroupBy(groupedColumns);
-      onGroup(
-        enrichEventWithDetails(e, {
-          column,
-          groupedColumns
-        })
-      );
-    },
-    [tableState.groupBy, onGroup, setGroupBy]
-  );
+    }, [rows.length, minRows, internalVisibleRowCount, popInRowHeight, tableBodyHeight]);
 
-  useEffect(() => {
-    if (columnOrder?.length > 0) {
-      setColumnOrder(columnOrder);
-    }
-  }, [columnOrder]);
+    const noDataStyles = useMemo(() => {
+      return {
+        height: `${tableBodyHeight}px`,
+        width: `${totalColumnsWidth}px`
+      };
+    }, [tableBodyHeight, totalColumnsWidth]);
 
-  const [dragOver, handleDragEnter, handleDragStart, handleDragOver, handleOnDrop, handleOnDragEnd] = useDragAndDrop(
-    props,
-    isRtl,
-    setColumnOrder,
-    tableState.columnOrder,
-    tableState.columnResizing,
-    tableInternalColumns
-  );
+    const onGroupByChanged = useCallback(
+      (e) => {
+        const { column, isGrouped } = e.detail;
+        let groupedColumns = [];
+        if (isGrouped) {
+          groupedColumns = [...tableState.groupBy, column.id];
+        } else {
+          groupedColumns = tableState.groupBy.filter((group) => group !== column.id);
+        }
+        setGroupBy(groupedColumns);
+        onGroup(
+          enrichEventWithDetails(e, {
+            column,
+            groupedColumns
+          })
+        );
+      },
+      [tableState.groupBy, onGroup, setGroupBy]
+    );
 
-  const passThroughProps = usePassThroughHtmlProps(props, [
-    'onSort',
-    'onGroup',
-    'onRowSelected',
-    'onRowClick',
-    'onRowExpandChange',
-    'onColumnsReordered',
-    'onLoadMore'
-  ]);
+    useEffect(() => {
+      if (columnOrder?.length > 0) {
+        setColumnOrder(columnOrder);
+      }
+    }, [columnOrder]);
 
-  const inlineStyle = useMemo(() => {
-    const tableStyles = {
-      maxWidth: '100%',
-      overflowX: 'auto',
-      display: 'flex',
-      flexDirection: 'column'
-    };
-    if (!!rowHeight) {
-      tableStyles['--sapWcrAnalyticalTableRowHeight'] = `${rowHeight}px`;
-    }
+    const [dragOver, handleDragEnter, handleDragStart, handleDragOver, handleOnDrop, handleOnDragEnd] = useDragAndDrop(
+      props,
+      isRtl,
+      setColumnOrder,
+      tableState.columnOrder,
+      tableState.columnResizing,
+      tableInternalColumns
+    );
 
-    if (tableState.tableClientWidth > 0) {
-      const styles = {
+    const passThroughProps = usePassThroughHtmlProps(props, [
+      'onSort',
+      'onGroup',
+      'onRowSelected',
+      'onRowClick',
+      'onRowExpandChange',
+      'onColumnsReordered',
+      'onLoadMore'
+    ]);
+
+    const inlineStyle = useMemo(() => {
+      const tableStyles = {
+        maxWidth: '100%',
+        overflowX: 'auto',
+        display: 'flex',
+        flexDirection: 'column'
+      };
+      if (!!rowHeight) {
+        tableStyles['--sapWcrAnalyticalTableRowHeight'] = `${rowHeight}px`;
+      }
+
+      if (tableState.tableClientWidth > 0) {
+        const styles = {
+          ...tableStyles,
+          ...style
+        } as CSSProperties;
+
+        if (totalColumnsWidth < tableState.tableClientWidth) {
+          return { ...styles, borderBottom: `1px solid ${ThemingParameters.sapList_BorderColor}` };
+        }
+        return styles;
+      }
+      return {
         ...tableStyles,
-        ...style
+        ...style,
+        visibility: 'hidden'
       } as CSSProperties;
+    }, [tableState.tableClientWidth, style, rowHeight, totalColumnsWidth]);
 
-      if (totalColumnsWidth < tableState.tableClientWidth) {
-        return { ...styles, borderBottom: `1px solid ${ThemingParameters.sapList_BorderColor}` };
+    const parentRef: RefObject<DivWithCustomScrollProp> = useRef(null);
+
+    const verticalScrollBarRef: RefObject<DivWithCustomScrollProp> = useRef(null);
+
+    const handleBodyScroll = () => {
+      if (verticalScrollBarRef.current && verticalScrollBarRef.current.scrollTop !== parentRef.current.scrollTop) {
+        if (!parentRef.current.isExternalVerticalScroll) {
+          verticalScrollBarRef.current.scrollTop = parentRef.current.scrollTop;
+          verticalScrollBarRef.current.isExternalVerticalScroll = true;
+        }
+        parentRef.current.isExternalVerticalScroll = false;
       }
-      return styles;
-    }
-    return {
-      ...tableStyles,
-      ...style,
-      visibility: 'hidden'
-    } as CSSProperties;
-  }, [tableState.tableClientWidth, style, rowHeight, totalColumnsWidth]);
+    };
 
-  const parentRef: RefObject<DivWithCustomScrollProp> = useRef(null);
-
-  const verticalScrollBarRef: RefObject<DivWithCustomScrollProp> = useRef(null);
-
-  const handleBodyScroll = () => {
-    if (verticalScrollBarRef.current && verticalScrollBarRef.current.scrollTop !== parentRef.current.scrollTop) {
-      if (!parentRef.current.isExternalVerticalScroll) {
-        verticalScrollBarRef.current.scrollTop = parentRef.current.scrollTop;
-        verticalScrollBarRef.current.isExternalVerticalScroll = true;
+    const handleVerticalScrollBarScroll = () => {
+      if (!verticalScrollBarRef.current.isExternalVerticalScroll) {
+        parentRef.current.scrollTop = verticalScrollBarRef.current.scrollTop;
+        parentRef.current.isExternalVerticalScroll = true;
       }
-      parentRef.current.isExternalVerticalScroll = false;
+      verticalScrollBarRef.current.isExternalVerticalScroll = false;
+    };
+
+    const tableClasses = StyleClassHelper.of(classes.table, GlobalStyleClasses.sapScrollBar);
+    if (withNavigationHighlight) {
+      tableClasses.put(classes.hasNavigationIndicator);
     }
-  };
+    return (
+      <div className={className} style={inlineStyle} title={tooltip} ref={analyticalTableRef} {...passThroughProps}>
+        {title && <TitleBar ref={titleBarRef}>{title}</TitleBar>}
+        {extension && <div ref={extensionRef}>{extension}</div>}
+        <FlexBox>
+          <div
+            {...getTableProps()}
+            role="grid"
+            aria-rowcount={rows.length}
+            aria-colcount={tableInternalColumns.length}
+            data-per-page={internalVisibleRowCount}
+            ref={tableRef}
+            className={tableClasses.className}
+          >
+            <div className={classes.tableHeaderBackgroundElement} />
+            {headerGroups.map((headerGroup) => {
+              let headerProps: Record<string, unknown> = {};
+              if (headerGroup.getHeaderGroupProps) {
+                headerProps = headerGroup.getHeaderGroupProps();
+              }
 
-  const handleVerticalScrollBarScroll = () => {
-    if (!verticalScrollBarRef.current.isExternalVerticalScroll) {
-      parentRef.current.scrollTop = verticalScrollBarRef.current.scrollTop;
-      parentRef.current.isExternalVerticalScroll = true;
-    }
-    verticalScrollBarRef.current.isExternalVerticalScroll = false;
-  };
-
-  const tableClasses = StyleClassHelper.of(classes.table, GlobalStyleClasses.sapScrollBar);
-  if (withNavigationHighlight) {
-    tableClasses.put(classes.hasNavigationIndicator);
-  }
-  return (
-    <div className={className} style={inlineStyle} title={tooltip} ref={analyticalTableRef} {...passThroughProps}>
-      {title && <TitleBar ref={titleBarRef}>{title}</TitleBar>}
-      {extension && <div ref={extensionRef}>{extension}</div>}
-      <FlexBox>
-        <div
-          {...getTableProps()}
-          role="grid"
-          aria-rowcount={rows.length}
-          aria-colcount={tableInternalColumns.length}
-          data-per-page={internalVisibleRowCount}
-          ref={tableRef}
-          className={tableClasses.className}
-        >
-          <div className={classes.tableHeaderBackgroundElement} />
-          {headerGroups.map((headerGroup) => {
-            let headerProps: Record<string, unknown> = {};
-            if (headerGroup.getHeaderGroupProps) {
-              headerProps = headerGroup.getHeaderGroupProps();
-            }
-
-            return (
-              tableRef.current && (
-                <ColumnHeaderContainer
-                  ref={headerRef}
-                  key={headerProps.key as string}
-                  reactWindowRef={reactWindowRef}
-                  tableRef={tableRef}
-                  resizeInfo={tableState.columnResizing}
-                  visibleColumnsWidth={visibleColumnsWidth}
-                  headerProps={headerProps}
-                  headerGroup={headerGroup}
-                  overscanCountHorizontal={overscanCountHorizontal}
-                  onSort={onSort}
-                  onGroupByChanged={onGroupByChanged}
-                  onDragStart={handleDragStart}
-                  onDragOver={handleDragOver}
-                  onDrop={handleOnDrop}
-                  onDragEnter={handleDragEnter}
-                  onDragEnd={handleOnDragEnd}
-                  dragOver={dragOver}
-                  isRtl={isRtl}
-                />
-              )
-            );
-          })}
-          {loading && props.data?.length > 0 && <LoadingComponent style={{ width: `${totalColumnsWidth}px` }} />}
-          {loading && props.data?.length === 0 && (
-            <TablePlaceholder
-              isRtl={isRtl}
-              columns={tableInternalColumns.filter(
-                (col) => (col.isVisible ?? true) && !tableState.hiddenColumns.includes(col.accessor)
-              )}
-              rows={props.minRows}
-              style={noDataStyles}
-              rowHeight={internalRowHeight}
-              tableWidth={totalColumnsWidth}
-            />
-          )}
-          {!loading && props.data?.length === 0 && (
-            <NoDataComponent noDataText={noDataText} className={classes.noDataContainer} style={noDataStyles} />
-          )}
-          {props.data?.length > 0 && tableRef.current && (
-            <VirtualTableBodyContainer
-              tableBodyHeight={tableBodyHeight}
-              totalColumnsWidth={totalColumnsWidth}
-              parentRef={parentRef}
-              classes={classes}
-              infiniteScroll={infiniteScroll}
-              infiniteScrollThreshold={infiniteScrollThreshold}
-              onLoadMore={onLoadMore}
-              internalRowHeight={internalRowHeight}
-              popInRowHeight={popInRowHeight}
-              rows={rows}
-              handleExternalScroll={handleBodyScroll}
-              visibleRows={internalVisibleRowCount}
-            >
-              <VirtualTableBody
+              return (
+                tableRef.current && (
+                  <ColumnHeaderContainer
+                    ref={headerRef}
+                    key={headerProps.key as string}
+                    reactWindowRef={reactWindowRef}
+                    tableRef={tableRef}
+                    resizeInfo={tableState.columnResizing}
+                    visibleColumnsWidth={visibleColumnsWidth}
+                    headerProps={headerProps}
+                    headerGroup={headerGroup}
+                    overscanCountHorizontal={overscanCountHorizontal}
+                    onSort={onSort}
+                    onGroupByChanged={onGroupByChanged}
+                    onDragStart={handleDragStart}
+                    onDragOver={handleDragOver}
+                    onDrop={handleOnDrop}
+                    onDragEnter={handleDragEnter}
+                    onDragEnd={handleOnDragEnd}
+                    dragOver={dragOver}
+                    isRtl={isRtl}
+                  />
+                )
+              );
+            })}
+            {loading && props.data?.length > 0 && <LoadingComponent style={{ width: `${totalColumnsWidth}px` }} />}
+            {loading && props.data?.length === 0 && (
+              <TablePlaceholder
+                isRtl={isRtl}
+                columns={tableInternalColumns.filter(
+                  (col) => (col.isVisible ?? true) && !tableState.hiddenColumns.includes(col.accessor)
+                )}
+                rows={props.minRows}
+                style={noDataStyles}
+                rowHeight={internalRowHeight}
+                tableWidth={totalColumnsWidth}
+              />
+            )}
+            {!loading && props.data?.length === 0 && (
+              <NoDataComponent noDataText={noDataText} className={classes.noDataContainer} style={noDataStyles} />
+            )}
+            {props.data?.length > 0 && tableRef.current && (
+              <VirtualTableBodyContainer
+                tableBodyHeight={tableBodyHeight}
+                totalColumnsWidth={totalColumnsWidth}
+                parentRef={parentRef}
                 classes={classes}
-                prepareRow={prepareRow}
-                rows={rows}
-                minRows={minRows}
-                reactWindowRef={reactWindowRef}
-                isTreeTable={isTreeTable}
+                infiniteScroll={infiniteScroll}
+                infiniteScrollThreshold={infiniteScrollThreshold}
+                onLoadMore={onLoadMore}
                 internalRowHeight={internalRowHeight}
                 popInRowHeight={popInRowHeight}
+                rows={rows}
+                handleExternalScroll={handleBodyScroll}
                 visibleRows={internalVisibleRowCount}
-                alternateRowColor={alternateRowColor}
-                overscanCount={overscanCount}
-                tableRef={tableRef}
-                parentRef={parentRef}
-                visibleColumns={visibleColumns}
-                visibleColumnsWidth={visibleColumnsWidth}
-                overscanCountHorizontal={overscanCountHorizontal}
-                renderRowSubComponent={renderRowSubComponent}
-                alwaysShowSubComponent={alwaysShowSubComponent}
-                markNavigatedRow={markNavigatedRow}
-                isRtl={isRtl}
-                subComponentsHeight={tableState.subComponentsHeight}
-                dispatch={dispatch}
-              />
-            </VirtualTableBodyContainer>
+              >
+                <VirtualTableBody
+                  classes={classes}
+                  prepareRow={prepareRow}
+                  rows={rows}
+                  minRows={minRows}
+                  reactWindowRef={reactWindowRef}
+                  isTreeTable={isTreeTable}
+                  internalRowHeight={internalRowHeight}
+                  popInRowHeight={popInRowHeight}
+                  visibleRows={internalVisibleRowCount}
+                  alternateRowColor={alternateRowColor}
+                  overscanCount={overscanCount}
+                  tableRef={tableRef}
+                  parentRef={parentRef}
+                  visibleColumns={visibleColumns}
+                  visibleColumnsWidth={visibleColumnsWidth}
+                  overscanCountHorizontal={overscanCountHorizontal}
+                  renderRowSubComponent={renderRowSubComponent}
+                  alwaysShowSubComponent={alwaysShowSubComponent}
+                  markNavigatedRow={markNavigatedRow}
+                  isRtl={isRtl}
+                  subComponentsHeight={tableState.subComponentsHeight}
+                  dispatch={dispatch}
+                />
+              </VirtualTableBodyContainer>
+            )}
+          </div>
+          {(tableState.isScrollable === undefined || tableState.isScrollable) && (
+            <VerticalScrollbar
+              internalRowHeight={internalRowHeight}
+              popInRowHeight={popInRowHeight}
+              tableRef={tableRef}
+              minRows={minRows}
+              rows={rows}
+              handleVerticalScrollBarScroll={handleVerticalScrollBarScroll}
+              ref={verticalScrollBarRef}
+            />
           )}
-        </div>
-        {(tableState.isScrollable === undefined || tableState.isScrollable) && (
-          <VerticalScrollbar
-            internalRowHeight={internalRowHeight}
+        </FlexBox>
+        {visibleRowCountMode === TableVisibleRowCountMode.INTERACTIVE && (
+          <VerticalResizer
             popInRowHeight={popInRowHeight}
-            tableRef={tableRef}
-            minRows={minRows}
-            rows={rows}
-            handleVerticalScrollBarScroll={handleVerticalScrollBarScroll}
-            ref={verticalScrollBarRef}
+            hasPopInColumns={tableState?.popInColumns?.length > 0}
+            analyticalTableRef={analyticalTableRef}
+            dispatch={dispatch}
+            extensionsHeight={extensionsHeight}
+            internalRowHeight={internalRowHeight}
           />
         )}
-      </FlexBox>
-      {visibleRowCountMode === TableVisibleRowCountMode.INTERACTIVE && (
-        <VerticalResizer
-          popInRowHeight={popInRowHeight}
-          hasPopInColumns={tableState?.popInColumns?.length > 0}
-          analyticalTableRef={analyticalTableRef}
-          dispatch={dispatch}
-          extensionsHeight={extensionsHeight}
-          internalRowHeight={internalRowHeight}
-        />
-      )}
-    </div>
-  );
-});
+      </div>
+    );
+  }
+);
 
 AnalyticalTable.displayName = 'AnalyticalTable';
 AnalyticalTable.defaultProps = {
