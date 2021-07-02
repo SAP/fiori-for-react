@@ -19,9 +19,6 @@ exports[`AnalyticalCardHeader with all string props 1`] = `
           >
             Title
           </div>
-          <div
-            class="ObjectStatus-objectStatus AnalyticalCardHeader-counter"
-          />
         </div>
         <div
           class="AnalyticalCardHeader-subHeaderText"
@@ -46,9 +43,6 @@ exports[`AnalyticalCardHeader with all string props 1`] = `
             <div
               class="AnalyticalCardHeader-indicatorAndUnit"
             >
-              <div
-                class="AnalyticalCardHeader-arrowIndicatorShape AnalyticalCardHeader-arrowRight AnalyticalCardHeader-none"
-              />
               <div
                 class="AnalyticalCardHeader-unit"
               >

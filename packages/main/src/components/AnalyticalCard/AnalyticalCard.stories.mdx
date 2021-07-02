@@ -63,8 +63,8 @@ import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
         <AnalyticalCard
           header={
             <AnalyticalCardHeader
-              title="Title"
-              subTitle="Subtitle"
+              heading="Heading"
+              subheading="Subheading"
               arrowIndicator={DeviationIndicator.Down}
               indicatorState={ValueState.Success}
               value="Value"
@@ -109,8 +109,8 @@ import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
   <Story
     name="Customizable header"
     args={{
-      title: 'Project Cost',
-      subTitle: 'All active Projects',
+      heading: 'Project Cost',
+      subheading: 'All active Projects',
       arrowIndicator: DeviationIndicator.Down,
       indicatorState: ValueState.Success,
       value: '100',
@@ -125,8 +125,8 @@ import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
       currency: 'USD'
     }}
     argTypes={{
-      title: { description: 'Defines the title of the `AnalyticalCardHeader`.' },
-      subTitle: { description: 'Defines the subtitle of the `AnalyticalCardHeader`.' },
+      heading: { description: 'Defines the heading of the `AnalyticalCardHeader`.' },
+      subheading: { description: 'Defines the subheading of the `AnalyticalCardHeader`.' },
       value: { description: 'Defines the value of the `AnalyticalCardHeader`.' },
       ...createSelectArgTypes({
         arrowIndicator: DeviationIndicator,
@@ -141,7 +141,7 @@ import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
       description: { description: 'Defines the description below the value of the `AnalyticalCardHeader`.' },
       counter: { description: 'Defines the counter in the upper right corner of the `AnalyticalCardHeader`.' },
       currency: { description: 'Defines the currency.' },
-      onHeaderPress: { description: 'Fired when the `AnalyticalCardHeader` header is clicked.' },
+      onHeaderClick: { description: 'Fired when the `AnalyticalCardHeader` header is clicked.' },
       header: { table: { disable: true } },
       children: { table: { disable: true } },
       ref: { table: { disable: true } }
@@ -174,8 +174,8 @@ import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
         <AnalyticalCard
           header={
             <AnalyticalCardHeader
-              title={args.title}
-              subTitle={args.subTitle}
+              heading={args.heading}
+              subheading={args.subheading}
               arrowIndicator={args.arrowIndicator}
               indicatorState={args.indicatorState}
               value={args.value}
@@ -183,7 +183,7 @@ import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
               unit={args.unit}
               target={args.target}
               deviation={args.deviation}
-              onHeaderPress={args.onHeaderPress}
+              onHeaderClick={args.onHeaderClick}
               showIndicator={args.showIndicator}
               description={args.description}
               counter={args.counter}

@@ -5,7 +5,7 @@ import { AnalyticalCardHeader } from '@ui5/webcomponents-react/dist/AnalyticalCa
 import { Text } from '@ui5/webcomponents-react/dist/Text';
 import React from 'react';
 
-const Header = <AnalyticalCardHeader title="Header Title" />;
+const Header = <AnalyticalCardHeader heading="Header Title" />;
 
 describe('Analytical Card', () => {
   test('Render without Crashing', () => {
