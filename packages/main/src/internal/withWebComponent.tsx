@@ -5,9 +5,7 @@ import React, {
   cloneElement,
   ComponentType,
   forwardRef,
-  ForwardRefRenderFunction,
   ReactElement,
-  Ref,
   RefObject,
   useEffect,
   useRef
@@ -24,19 +22,14 @@ const createEventPropName = (eventName) => `on${capitalizeFirstLetter(kebabToCam
 
 type EventHandler = (event: CustomEvent<unknown>) => void;
 
-export interface WithWebComponentPropTypes extends CommonProps {
-  ref?: Ref<any>;
-  children?: any | void;
-}
-
-export const withWebComponent = <T extends Record<string, any>>(
+export const withWebComponent = <Props extends Record<string, any>, RefType = Ui5DomRef>(
   tagName: string,
   regularProperties: string[],
   booleanProperties: string[],
   slotProperties: string[],
   eventProperties: string[]
 ) => {
-  const WithWebComponent = forwardRef((props: T & WithWebComponentPropTypes, wcRef: RefObject<Ui5DomRef>) => {
+  const WithWebComponent = forwardRef((props: Props & CommonProps, wcRef: RefObject<RefType>) => {
     const { className, tooltip, children, ...rest } = props;
 
     const ref = useConsolidatedRef<HTMLElement>(wcRef);
@@ -124,7 +117,7 @@ export const withWebComponent = <T extends Record<string, any>>(
 
     const tagNameSuffix: string = getEffectiveScopingSuffixForTag(tagName);
     const Component = (tagNameSuffix ? `${tagName}-${tagNameSuffix}` : tagName) as unknown as ComponentType<
-      WithWebComponentPropTypes & { class: string }
+      CommonProps & { class: string }
     >;
 
     return (
@@ -144,5 +137,5 @@ export const withWebComponent = <T extends Record<string, any>>(
 
   WithWebComponent.displayName = `WithWebComponent(${tagName})`;
 
-  return WithWebComponent as unknown as ForwardRefRenderFunction<Ui5DomRef, T & WithWebComponentPropTypes>;
+  return WithWebComponent;
 };

@@ -1,9 +1,10 @@
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
-import { FC, ReactNode } from 'react';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents-fiori/dist/SideNavigationItem';
 
-export interface SideNavigationItemPropTypes extends WithWebComponentPropTypes {
+export interface SideNavigationItemPropTypes extends CommonProps {
   /**
    * Defines if the item is expanded
    */
@@ -38,7 +39,7 @@ export interface SideNavigationItemPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/SideNavigationItem" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const SideNavigationItem: FC<SideNavigationItemPropTypes> = withWebComponent<SideNavigationItemPropTypes>(
+const SideNavigationItem = withWebComponent<SideNavigationItemPropTypes>(
   'ui5-side-navigation-item',
   ['icon', 'text'],
   ['expanded', 'selected', 'wholeItemToggleable'],

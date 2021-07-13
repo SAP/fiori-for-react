@@ -2,12 +2,12 @@ import { AvatarBackgroundColor } from '@ui5/webcomponents-react/dist/AvatarBackg
 import { AvatarFitType } from '@ui5/webcomponents-react/dist/AvatarFitType';
 import { AvatarShape } from '@ui5/webcomponents-react/dist/AvatarShape';
 import { AvatarSize } from '@ui5/webcomponents-react/dist/AvatarSize';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
-import { FC } from 'react';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 
 import '@ui5/webcomponents/dist/Avatar';
 
-export interface AvatarPropTypes extends WithWebComponentPropTypes {
+export interface AvatarPropTypes extends CommonProps {
   /**
    * Defines the text alternative of the `Avatar`. If not provided a default text alternative will be set, if present.
    */
@@ -92,7 +92,7 @@ export interface AvatarPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/Avatar" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const Avatar: FC<AvatarPropTypes> = withWebComponent<AvatarPropTypes>(
+const Avatar = withWebComponent<AvatarPropTypes>(
   'ui5-avatar',
   ['accessibleName', 'backgroundColor', 'icon', 'image', 'imageFitType', 'initials', 'shape', 'size'],
   ['interactive'],

@@ -1,11 +1,12 @@
 import { ValueState } from '@ui5/webcomponents-react/dist/ValueState';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { Ui5CustomEvent } from '@ui5/webcomponents-react/interfaces/Ui5CustomEvent';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents/dist/Select';
 
-export interface SelectPropTypes extends Omit<WithWebComponentPropTypes, 'onChange'> {
+export interface SelectPropTypes extends Omit<CommonProps, 'onChange'> {
   /**
    * Defines whether `Select` is in disabled state.
    *
@@ -65,7 +66,7 @@ export interface SelectPropTypes extends Omit<WithWebComponentPropTypes, 'onChan
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/Select" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const Select: FC<SelectPropTypes> = withWebComponent<SelectPropTypes>(
+const Select = withWebComponent<SelectPropTypes>(
   'ui5-select',
   ['name', 'valueState'],
   ['disabled', 'required'],

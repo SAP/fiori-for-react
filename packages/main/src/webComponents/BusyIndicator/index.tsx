@@ -1,10 +1,11 @@
 import { BusyIndicatorSize } from '@ui5/webcomponents-react/dist/BusyIndicatorSize';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
-import { FC, ReactNode } from 'react';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents/dist/BusyIndicator';
 
-export interface BusyIndicatorPropTypes extends WithWebComponentPropTypes {
+export interface BusyIndicatorPropTypes extends CommonProps {
   /**
    * Defines if the busy indicator is visible on the screen. By default it is not.
    */
@@ -30,7 +31,7 @@ export interface BusyIndicatorPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/BusyIndicator" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const BusyIndicator: FC<BusyIndicatorPropTypes> = withWebComponent<BusyIndicatorPropTypes>(
+const BusyIndicator = withWebComponent<BusyIndicatorPropTypes>(
   'ui5-busyindicator',
   ['size', 'text'],
   ['active'],

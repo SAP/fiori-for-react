@@ -1,10 +1,11 @@
 import { ValueState } from '@ui5/webcomponents-react/dist/ValueState';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
-import { FC, ReactNode } from 'react';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents/dist/TreeItem';
 
-export interface TreeItemPropTypes extends WithWebComponentPropTypes {
+export interface TreeItemPropTypes extends CommonProps {
   /**
    * Defines whether the tree node is expanded or collapsed. Only has visual effect for tree nodes with children.
    */
@@ -46,7 +47,7 @@ export interface TreeItemPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/TreeItem" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const TreeItem: FC<TreeItemPropTypes> = withWebComponent<TreeItemPropTypes>(
+const TreeItem = withWebComponent<TreeItemPropTypes>(
   'ui5-tree-item',
   ['icon', 'info', 'infoState', 'text'],
   ['expanded', 'hasChildren', 'selected'],

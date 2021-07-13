@@ -1,10 +1,11 @@
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { Ui5CustomEvent } from '@ui5/webcomponents-react/interfaces/Ui5CustomEvent';
-import { FC, CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 import '@ui5/webcomponents/dist/ColorPalette';
 
-export interface ColorPalettePropTypes extends Omit<WithWebComponentPropTypes, 'onChange'> {
+export interface ColorPalettePropTypes extends Omit<CommonProps, 'onChange'> {
   /**
    * Defines whether the user can choose a custom color from a color picker **Note:** In order to use this property you need to import the following module: `"@ui5/webcomponents/dist/features/ColorPaletteMoreColors.js"`
    */
@@ -28,7 +29,7 @@ export interface ColorPalettePropTypes extends Omit<WithWebComponentPropTypes, '
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/ColorPalette" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const ColorPalette: FC<ColorPalettePropTypes> = withWebComponent<ColorPalettePropTypes>(
+const ColorPalette = withWebComponent<ColorPalettePropTypes>(
   'ui5-color-palette',
   ['value'],
   ['moreColors'],

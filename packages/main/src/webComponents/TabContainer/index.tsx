@@ -1,12 +1,13 @@
 import { TabContainerTabsPlacement } from '@ui5/webcomponents-react/dist/TabContainerTabsPlacement';
 import { TabLayout } from '@ui5/webcomponents-react/dist/TabLayout';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { Ui5CustomEvent } from '@ui5/webcomponents-react/interfaces/Ui5CustomEvent';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents/dist/TabContainer';
 
-export interface TabContainerPropTypes extends WithWebComponentPropTypes {
+export interface TabContainerPropTypes extends CommonProps {
   /**
    * Defines whether the tab content is collapsed.
    */
@@ -62,7 +63,7 @@ export interface TabContainerPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/TabContainer" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const TabContainer: FC<TabContainerPropTypes> = withWebComponent<TabContainerPropTypes>(
+const TabContainer = withWebComponent<TabContainerPropTypes>(
   'ui5-tabcontainer',
   ['tabLayout', 'tabsPlacement'],
   ['collapsed', 'fixed', 'showOverflow'],

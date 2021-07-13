@@ -1,10 +1,11 @@
 import { ButtonDesign } from '@ui5/webcomponents-react/dist/ButtonDesign';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
-import { FC, ReactNode, MouseEventHandler } from 'react';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
+import { ReactNode, MouseEventHandler } from 'react';
 
 import '@ui5/webcomponents/dist/ToggleButton';
 
-export interface ToggleButtonPropTypes extends Omit<WithWebComponentPropTypes, 'onClick'> {
+export interface ToggleButtonPropTypes extends Omit<CommonProps, 'onClick'> {
   /**
    * Determines whether the `ToggleButton` is displayed as pressed.
    */
@@ -64,7 +65,7 @@ export interface ToggleButtonPropTypes extends Omit<WithWebComponentPropTypes, '
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/ToggleButton" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const ToggleButton: FC<ToggleButtonPropTypes> = withWebComponent<ToggleButtonPropTypes>(
+const ToggleButton = withWebComponent<ToggleButtonPropTypes>(
   'ui5-togglebutton',
   ['design', 'icon', 'iconSize'],
   ['pressed', 'disabled', 'iconEnd', 'submits'],

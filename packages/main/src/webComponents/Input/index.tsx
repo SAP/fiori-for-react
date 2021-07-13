@@ -1,12 +1,14 @@
 import { InputType } from '@ui5/webcomponents-react/dist/InputType';
 import { ValueState } from '@ui5/webcomponents-react/dist/ValueState';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { Ui5CustomEvent } from '@ui5/webcomponents-react/interfaces/Ui5CustomEvent';
-import { FC, ReactNode } from 'react';
+import { Ui5InputDomRef } from '@ui5/webcomponents-react/interfaces/Ui5InputDomRef';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents/dist/Input';
 
-export interface InputPropTypes extends Omit<WithWebComponentPropTypes, 'onChange' | 'onInput'> {
+export interface InputPropTypes extends Omit<CommonProps, 'onChange' | 'onInput'> {
   /**
    * Defines whether the `Input` is in disabled state.
    *
@@ -154,7 +156,7 @@ export interface InputPropTypes extends Omit<WithWebComponentPropTypes, 'onChang
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/Input" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const Input: FC<InputPropTypes> = withWebComponent<InputPropTypes>(
+const Input = withWebComponent<InputPropTypes, Ui5InputDomRef>(
   'ui5-input',
   ['maxlength', 'name', 'placeholder', 'type', 'value', 'valueState'],
   ['disabled', 'highlight', 'readonly', 'required', 'showSuggestions'],

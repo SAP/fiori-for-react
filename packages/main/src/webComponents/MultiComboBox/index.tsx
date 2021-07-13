@@ -1,11 +1,12 @@
 import { ValueState } from '@ui5/webcomponents-react/dist/ValueState';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { Ui5CustomEvent } from '@ui5/webcomponents-react/interfaces/Ui5CustomEvent';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents/dist/MultiComboBox';
 
-export interface MultiComboBoxPropTypes extends Omit<WithWebComponentPropTypes, 'onChange' | 'onInput'> {
+export interface MultiComboBoxPropTypes extends Omit<CommonProps, 'onChange' | 'onInput'> {
   /**
    * Defines if the user input will be prevented, if no matching item has been found
    */
@@ -111,7 +112,7 @@ export interface MultiComboBoxPropTypes extends Omit<WithWebComponentPropTypes, 
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/MultiComboBox" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const MultiComboBox: FC<MultiComboBoxPropTypes> = withWebComponent<MultiComboBoxPropTypes>(
+const MultiComboBox = withWebComponent<MultiComboBoxPropTypes>(
   'ui5-multi-combobox',
   ['filter', 'placeholder', 'value', 'valueState'],
   ['allowCustomValues', 'disabled', 'open', 'readonly', 'required'],

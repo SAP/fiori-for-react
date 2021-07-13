@@ -1,12 +1,13 @@
 import { CalendarSelectionMode } from '@ui5/webcomponents-react/dist/CalendarSelectionMode';
 import { CalendarType } from '@ui5/webcomponents-react/dist/CalendarType';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { Ui5CustomEvent } from '@ui5/webcomponents-react/interfaces/Ui5CustomEvent';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents/dist/Calendar';
 
-export interface CalendarPropTypes extends WithWebComponentPropTypes {
+export interface CalendarPropTypes extends CommonProps {
   /**
    * Defines the visibility of the week numbers column.
    *
@@ -54,7 +55,7 @@ export interface CalendarPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/Calendar" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const Calendar: FC<CalendarPropTypes> = withWebComponent<CalendarPropTypes>(
+const Calendar = withWebComponent<CalendarPropTypes>(
   'ui5-calendar',
   ['selectionMode', 'formatPattern', 'maxDate', 'minDate', 'primaryCalendarType'],
   ['hideWeekNumbers'],

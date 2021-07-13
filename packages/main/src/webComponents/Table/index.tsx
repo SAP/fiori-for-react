@@ -1,11 +1,12 @@
 import { TableGrowingMode } from '@ui5/webcomponents-react/dist/TableGrowingMode';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { Ui5CustomEvent } from '@ui5/webcomponents-react/interfaces/Ui5CustomEvent';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents/dist/Table';
 
-export interface TablePropTypes extends WithWebComponentPropTypes {
+export interface TablePropTypes extends CommonProps {
   /**
    * Defines if the table is in busy state. **In this state the component's opacity is reduced and busy indicator is displayed at the bottom of the table.**
    */
@@ -96,7 +97,7 @@ export interface TablePropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/Table" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const Table: FC<TablePropTypes> = withWebComponent<TablePropTypes>(
+const Table = withWebComponent<TablePropTypes>(
   'ui5-table',
   ['growing', 'moreSubtext', 'moreText', 'noDataText'],
   ['busy', 'showNoData', 'stickyColumnHeader'],

@@ -1,10 +1,12 @@
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { Ui5CustomEvent } from '@ui5/webcomponents-react/interfaces/Ui5CustomEvent';
-import { FC, ReactNode } from 'react';
+import { Ui5DialogDomRef } from '@ui5/webcomponents-react/interfaces/Ui5DialogDomRef';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents/dist/Dialog';
 
-export interface DialogPropTypes extends WithWebComponentPropTypes {
+export interface DialogPropTypes extends CommonProps {
   /**
    * Determines whether the `Dialog` is draggable. If this property is set to true, the Dialog will be draggable by its header.
    *
@@ -81,7 +83,7 @@ export interface DialogPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/Dialog" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const Dialog: FC<DialogPropTypes> = withWebComponent<DialogPropTypes>(
+const Dialog = withWebComponent<DialogPropTypes, Ui5DialogDomRef>(
   'ui5-dialog',
   ['headerText', 'initialFocus'],
   ['draggable', 'resizable', 'stretch', 'preventFocusRestore'],

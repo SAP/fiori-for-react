@@ -1,9 +1,9 @@
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
-import { FC } from 'react';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 
 import '@ui5/webcomponents/dist/Icon';
 
-export interface IconPropTypes extends WithWebComponentPropTypes {
+export interface IconPropTypes extends CommonProps {
   /**
    * Defines the text alternative of the `Icon`. If not provided a default text alternative will be set, if present.
    *
@@ -42,7 +42,7 @@ export interface IconPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/Icon" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const Icon: FC<IconPropTypes> = withWebComponent<IconPropTypes>(
+const Icon = withWebComponent<IconPropTypes>(
   'ui5-icon',
   ['accessibleName', 'name'],
   ['interactive', 'showTooltip'],

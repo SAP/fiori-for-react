@@ -1,10 +1,11 @@
 import { SemanticColor } from '@ui5/webcomponents-react/dist/SemanticColor';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
-import { FC, ReactNode } from 'react';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents/dist/Tab';
 
-export interface TabPropTypes extends WithWebComponentPropTypes {
+export interface TabPropTypes extends CommonProps {
   /**
    * Represents the "additionalText" text, which is displayed in the tab filter.
    */
@@ -56,7 +57,7 @@ export interface TabPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/Tab" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const Tab: FC<TabPropTypes> = withWebComponent<TabPropTypes>(
+const Tab = withWebComponent<TabPropTypes>(
   'ui5-tab',
   ['additionalText', 'icon', 'semanticColor', 'stableDomRef', 'text'],
   ['disabled', 'selected'],

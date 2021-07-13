@@ -1,9 +1,10 @@
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
-import { FC, ReactNode } from 'react';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents-fiori/dist/WizardStep';
 
-export interface WizardStepPropTypes extends WithWebComponentPropTypes {
+export interface WizardStepPropTypes extends CommonProps {
   /**
    * When `branching` is enabled a dashed line would be displayed after the step, meant to indicate that the next step is not yet known and depends on user choice in the current step.
    *
@@ -55,7 +56,7 @@ export interface WizardStepPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/WizardStep" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const WizardStep: FC<WizardStepPropTypes> = withWebComponent<WizardStepPropTypes>(
+const WizardStep = withWebComponent<WizardStepPropTypes>(
   'ui5-wizard-step',
   ['heading', 'icon', 'subheading'],
   ['branching', 'disabled', 'selected'],

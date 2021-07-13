@@ -1,11 +1,12 @@
 import { FCLLayout } from '@ui5/webcomponents-react/dist/FCLLayout';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { Ui5CustomEvent } from '@ui5/webcomponents-react/interfaces/Ui5CustomEvent';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents-fiori/dist/FlexibleColumnLayout';
 
-export interface FlexibleColumnLayoutPropTypes extends WithWebComponentPropTypes {
+export interface FlexibleColumnLayoutPropTypes extends CommonProps {
   /**
    * An object of strings that defines several additional accessibility texts for even further customization. It supports the following fields:
    *
@@ -89,7 +90,7 @@ export interface FlexibleColumnLayoutPropTypes extends WithWebComponentPropTypes
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/FlexibleColumnLayout" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const FlexibleColumnLayout: FC<FlexibleColumnLayoutPropTypes> = withWebComponent<FlexibleColumnLayoutPropTypes>(
+const FlexibleColumnLayout = withWebComponent<FlexibleColumnLayoutPropTypes>(
   'ui5-flexible-column-layout',
   ['accessibilityTexts', 'layout'],
   ['noArrows'],

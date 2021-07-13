@@ -1,10 +1,11 @@
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
 import { Ui5CustomEvent } from '@ui5/webcomponents-react/interfaces/Ui5CustomEvent';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents-fiori/dist/ShellBarItem';
 
-export interface ShellBarItemPropTypes extends WithWebComponentPropTypes {
+export interface ShellBarItemPropTypes extends CommonProps {
   /**
    * Defines the count displayed in the top-right corner.
    */
@@ -23,7 +24,7 @@ export interface ShellBarItemPropTypes extends WithWebComponentPropTypes {
   text?: string;
   /**
    * Fired, when the item is pressed.
-   * 
+   *
    * __Note:__ To get the DOM reference of the clicked `ShellBarItem`, use `event.detail.targetRef`.
    */
   onItemClick?: (event: Ui5CustomEvent<HTMLElement, { targetRef: ReactNode }>) => void;
@@ -34,7 +35,7 @@ export interface ShellBarItemPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/ShellBarItem" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const ShellBarItem: FC<ShellBarItemPropTypes> = withWebComponent<ShellBarItemPropTypes>(
+const ShellBarItem = withWebComponent<ShellBarItemPropTypes>(
   'ui5-shellbar-item',
   ['count', 'icon', 'stableDomRef', 'text'],
   [],

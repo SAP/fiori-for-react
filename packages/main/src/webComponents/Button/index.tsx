@@ -1,10 +1,11 @@
 import { ButtonDesign } from '@ui5/webcomponents-react/dist/ButtonDesign';
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
-import { FC, ReactNode, MouseEventHandler } from 'react';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
+import { ReactNode, MouseEventHandler } from 'react';
 
 import '@ui5/webcomponents/dist/Button';
 
-export interface ButtonPropTypes extends Omit<WithWebComponentPropTypes, 'onClick'> {
+export interface ButtonPropTypes extends Omit<CommonProps, 'onClick'> {
   /**
    * Defines the `Button` design.
    *
@@ -58,7 +59,7 @@ export interface ButtonPropTypes extends Omit<WithWebComponentPropTypes, 'onClic
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/Button" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const Button: FC<ButtonPropTypes> = withWebComponent<ButtonPropTypes>(
+const Button = withWebComponent<ButtonPropTypes>(
   'ui5-button',
   ['design', 'icon', 'iconSize'],
   ['disabled', 'iconEnd', 'submits'],

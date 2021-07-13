@@ -1,9 +1,10 @@
-import { withWebComponent, WithWebComponentPropTypes } from '@ui5/webcomponents-react/dist/withWebComponent';
-import { FC, ReactNode } from 'react';
+import { withWebComponent } from '@ui5/webcomponents-react/dist/withWebComponent';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
+import { ReactNode } from 'react';
 
 import '@ui5/webcomponents-fiori/dist/ProductSwitch';
 
-export interface ProductSwitchPropTypes extends WithWebComponentPropTypes {
+export interface ProductSwitchPropTypes extends CommonProps {
   /**
    * Defines the items of the `ProductSwitch`.
    */
@@ -15,13 +16,7 @@ export interface ProductSwitchPropTypes extends WithWebComponentPropTypes {
  *
  * <ui5-link href="https://sap.github.io/ui5-webcomponents/playground/components/ProductSwitch" target="_blank">UI5 Web Components Playground</ui5-link>
  */
-const ProductSwitch: FC<ProductSwitchPropTypes> = withWebComponent<ProductSwitchPropTypes>(
-  'ui5-product-switch',
-  [],
-  [],
-  [],
-  []
-);
+const ProductSwitch = withWebComponent<ProductSwitchPropTypes>('ui5-product-switch', [], [], [], []);
 
 ProductSwitch.displayName = 'ProductSwitch';
 
