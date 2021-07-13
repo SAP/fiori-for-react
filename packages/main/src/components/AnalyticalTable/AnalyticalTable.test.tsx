@@ -253,7 +253,7 @@ describe('AnalyticalTable', () => {
   });
   //todo when it's possible to open popovers on click, activate this test again
   test.skip('test Asc desc', async () => {
-    const { asFragment } = render(<AnalyticalTable data={data} title={'Test'} columns={columns} />);
+    const { asFragment } = render(<AnalyticalTable data={data} header={'Test'} columns={columns} />);
 
     expect(asFragment()).toMatchSnapshot();
 
@@ -302,7 +302,7 @@ describe('AnalyticalTable', () => {
   test('Tree Table', () => {
     const utils = render(
       <AnalyticalTable
-        title="Table Title"
+        header="Table Title"
         data={dataTree}
         columns={columns}
         loading={false}
@@ -325,7 +325,7 @@ describe('AnalyticalTable', () => {
 
   test('Loading - Placeholder', () => {
     const { asFragment } = render(
-      <AnalyticalTable title="Table Title" data={[]} columns={columns} loading visibleRows={15} minRows={5} />
+      <AnalyticalTable header="Table Title" data={[]} columns={columns} loading visibleRows={15} minRows={5} />
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -333,7 +333,7 @@ describe('AnalyticalTable', () => {
 
   test('Loading - Loader', () => {
     const { asFragment } = render(
-      <AnalyticalTable title="Table Title" data={data} columns={columns} loading visibleRows={15} minRows={5} />
+      <AnalyticalTable header="Table Title" data={data} columns={columns} loading visibleRows={15} minRows={5} />
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -341,14 +341,16 @@ describe('AnalyticalTable', () => {
 
   test('Alternate Row Color', () => {
     const { asFragment } = render(
-      <AnalyticalTable title="Table Title" data={data} columns={columns} alternateRowColor />
+      <AnalyticalTable header="Table Title" data={data} columns={columns} alternateRowColor />
     );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('custom row height', () => {
-    const { asFragment } = render(<AnalyticalTable title="Table Title" data={data} columns={columns} rowHeight={60} />);
+    const { asFragment } = render(
+      <AnalyticalTable header="Table Title" data={data} columns={columns} rowHeight={60} />
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });
@@ -392,7 +394,7 @@ describe('AnalyticalTable', () => {
   });
 
   test('test drag and drop of a draggable column', () => {
-    const { asFragment, container } = render(<AnalyticalTable data={data} title={'Test'} columns={columns} />);
+    const { asFragment, container } = render(<AnalyticalTable data={data} header={'Test'} columns={columns} />);
 
     // get first column of the table and simulate dragging of it
     let componentDrag = container.querySelector<HTMLElement>('div[role="columnheader"][draggable]');
@@ -415,7 +417,7 @@ describe('AnalyticalTable', () => {
   });
 
   test('RTL: test drag and drop of a draggable column', () => {
-    const { asFragment, container } = renderRtl(<AnalyticalTable data={data} title={'Test'} columns={columns} />);
+    const { asFragment, container } = renderRtl(<AnalyticalTable data={data} header={'Test'} columns={columns} />);
 
     // get first column of the table and simulate dragging of it
     let componentDrag = container.querySelector<HTMLElement>('div[role="columnheader"][draggable]');
@@ -440,7 +442,7 @@ describe('AnalyticalTable', () => {
   test('render without data', () => {
     const data = [];
     const { asFragment } = render(
-      <AnalyticalTable title="Table Title" data={data} columns={columns} alternateRowColor />
+      <AnalyticalTable header="Table Title" data={data} columns={columns} alternateRowColor />
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -449,7 +451,7 @@ describe('AnalyticalTable', () => {
   test('without selection Column', () => {
     const { asFragment } = render(
       <AnalyticalTable
-        title="Table Title"
+        header="Table Title"
         data={data}
         columns={columns}
         selectionMode={TableSelectionMode.SINGLE_SELECT}
@@ -468,7 +470,7 @@ describe('AnalyticalTable', () => {
         <AnalyticalTable
           style={{ width: '170px' }}
           ref={tableRef}
-          title="Table Title"
+          header="Table Title"
           data={data}
           columns={columns}
           visibleRows={1}
@@ -517,7 +519,7 @@ describe('AnalyticalTable', () => {
   test('with highlight row', () => {
     const { asFragment, getAllByRole, rerender } = render(
       <AnalyticalTable
-        title="Table Title"
+        header="Table Title"
         data={data}
         columns={columns}
         selectionMode={TableSelectionMode.SINGLE_SELECT}
@@ -539,7 +541,7 @@ describe('AnalyticalTable', () => {
 
     rerender(
       <AnalyticalTable
-        title="Table Title"
+        header="Table Title"
         data={data}
         columns={columns}
         selectionMode={TableSelectionMode.SINGLE_SELECT}
@@ -556,7 +558,7 @@ describe('AnalyticalTable', () => {
   test('RTL: with highlight row', () => {
     const { asFragment, getAllByRole, rerender } = renderRtl(
       <AnalyticalTable
-        title="Table Title"
+        header="Table Title"
         data={data}
         columns={columns}
         selectionMode={TableSelectionMode.SINGLE_SELECT}
@@ -578,7 +580,7 @@ describe('AnalyticalTable', () => {
 
     rerender(
       <AnalyticalTable
-        title="Table Title"
+        header="Table Title"
         data={data}
         columns={columns}
         selectionMode={TableSelectionMode.SINGLE_SELECT}
@@ -906,7 +908,7 @@ describe('AnalyticalTable', () => {
     const callback = jest.fn();
     const { getByText, getAllByRole } = render(
       <AnalyticalTable
-        title="Table Title"
+        header="Table Title"
         data={data}
         columns={columns}
         selectionBehavior={TableSelectionBehavior.ROW}

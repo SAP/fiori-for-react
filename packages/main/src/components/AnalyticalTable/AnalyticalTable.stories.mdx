@@ -95,7 +95,7 @@ import { useRowDisableSelection } from '@ui5/webcomponents-react/dist/Analytical
         }
       }
     ],
-    title: 'Table Title',
+    header: 'Table Title',
     sortable: true,
     filterable: true,
     visibleRows: 15,
@@ -256,7 +256,7 @@ With the `useRowDisableSelection` it's possible to disable the selection of spec
                   selectedRowIds={[]}
                   tableHooks={[useRowDisableSelection(disableRowFunc)]}
                   visibleRows={10}
-                  title="All under 40 are not selectable"
+                  header="All under 40 are not selectable"
                 />
               ) : (
                 <AnalyticalTable
@@ -265,7 +265,7 @@ With the `useRowDisableSelection` it's possible to disable the selection of spec
                   selectionMode={args.selectionMode}
                   tableHooks={[useRowDisableSelection('disableSelection')]}
                   visibleRows={10}
-                  title={`All with "disableSelection: true" are not selectable`}
+                  header={`All with "disableSelection: true" are not selectable`}
                 />
               )}
             </>
@@ -478,7 +478,7 @@ The table initially contains 50 rows, when the last 10 rows are reached the tabl
               columns={args.columns}
               infiniteScroll={true}
               infiniteScrollThreshold={10}
-              title="Scroll to load more data"
+              header="Scroll to load more data"
               onLoadMore={onLoadMore}
               loading={loading}
             />
@@ -514,7 +514,7 @@ const InfiniteScrollTable = (props) => {
       columns={props.columns}
       infiniteScroll={true}
       infiniteScrollThreshold={10}
-      title="Scroll to load more data"
+      header="Scroll to load more data"
       onLoadMore={onLoadMore}
       loading={loading}
     />
@@ -538,7 +538,7 @@ The prop expects a function with an optional parameter containing the `row` inst
     argTypes={{
       columns: { table: { disable: true } },
       data: { table: { disable: true } },
-      title: { table: { disable: true } },
+      header: { table: { disable: true } },
       extension: { table: { disable: true } },
       minRows: { table: { disable: true } },
       visibleRowCountMode: { table: { disable: true } },
@@ -708,7 +708,7 @@ By adding the `visibleRowCountMode` prop and setting it to `TableVisibleRowCount
     argTypes={{
       columns: { table: { disable: true } },
       data: { table: { disable: true } },
-      title: { table: { disable: true } },
+      header: { table: { disable: true } },
       extension: { table: { disable: true } },
       minRows: { table: { disable: true } },
       visibleRowCountMode: { table: { disable: true } },
@@ -770,7 +770,7 @@ By adding the `visibleRowCountMode` prop and setting it to `TableVisibleRowCount
             data={args.data}
             columns={args.columns}
             visibleRowCountMode={args.visibleRowCountMode}
-            title={`Current height: ${args.containerHeight}px - Change the height in the table above`}
+            header={`Current height: ${args.containerHeight}px - Change the height in the table above`}
           />
         </div>
       );
@@ -848,7 +848,7 @@ In the example below you can have a look at this behavior:
       columns: { table: { disable: true } },
       visibleRowCountMode: { table: { disable: true } },
       data: { table: { disable: true } },
-      title: { table: { disable: true } },
+      header: { table: { disable: true } },
       extension: { table: { disable: true } },
       minRows: { table: { disable: true } },
       visibleRows: { table: { disable: true } },
@@ -913,7 +913,7 @@ In the example below you can have a look at this behavior:
             data={args.data}
             columns={args.columns}
             visibleRowCountMode={args.visibleRowCountMode}
-            title={`Current width: ${args.containerWidth}`}
+            header={`Current width: ${args.containerWidth}`}
           />
         </div>
       );
