@@ -23,7 +23,8 @@ import React, {
   useCallback,
   useEffect,
   useMemo,
-  useRef
+  useRef,
+  useState
 } from 'react';
 import {
   PluginHook,
@@ -560,13 +561,30 @@ const AnalyticalTable: FC<TableProps> = forwardRef((props: TableProps, ref: Ref<
     }
   }, [tableState?.interactiveRowsHavePopIn, tableState?.popInColumns?.length]);
 
+  const [maxHeight, setMaxHeight] = useState(-1);
+
+  useEffect(() => {
+    if (visibleRowCountMode === TableVisibleRowCountMode.AUTO && analyticalTableRef.current?.parentElement) {
+      const height = analyticalTableRef.current?.parentElement?.getBoundingClientRect().height;
+      setMaxHeight(height);
+    }
+  }, [visibleRowCountMode, analyticalTableRef.current, setMaxHeight]);
+
   const tableBodyHeight = useMemo(() => {
     const rowNum = rows.length < internalVisibleRowCount ? Math.max(rows.length, minRows) : internalVisibleRowCount;
     const rowHeight =
       visibleRowCountMode === TableVisibleRowCountMode.AUTO || tableState?.interactiveRowsHavePopIn
         ? popInRowHeight
         : internalRowHeight;
-    return rowHeight * rowNum;
+    const additionalHeight = tableState.subComponentsHeight
+      ? Object.keys(tableState.subComponentsHeight).reduce(
+          (acc, curr) => acc + tableState.subComponentsHeight[curr].subComponentHeight,
+          0
+        )
+      : 0;
+    const totalHeight = rowHeight * rowNum + additionalHeight;
+
+    return visibleRowCountMode === TableVisibleRowCountMode.AUTO ? Math.min(maxHeight, totalHeight) : totalHeight;
   }, [
     internalRowHeight,
     rows.length,
@@ -574,7 +592,9 @@ const AnalyticalTable: FC<TableProps> = forwardRef((props: TableProps, ref: Ref<
     minRows,
     popInRowHeight,
     visibleRowCountMode,
-    tableState?.interactiveRowsHavePopIn
+    tableState?.interactiveRowsHavePopIn,
+    tableState.subComponentsHeight,
+    maxHeight
   ]);
 
   // scroll bar detection

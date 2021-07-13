@@ -1063,3 +1063,30 @@ export const TableWithNavigationIndicators = () => {
   );
 };
 ```
+
+## RowCountMode === Auto & subcomponents & few results
+
+Demonstrates that it's able to take up the max space, respecting additional height of subcomponents.
+
+<Canvas>
+  <Story
+    name="Respect Additional Height"
+    args={{ selectionMode: TableSelectionMode.MULTI_SELECT, data: generateData(3) }}
+  >
+    {(args) => {
+      return (
+        <div style={{ height: '450px', border: '1px solid blue' }}>
+          <AnalyticalTable
+            data={args.data}
+            columns={args.columns}
+            minRows={1}
+            visibleRowCountMode={TableVisibleRowCountMode.AUTO}
+            renderRowSubComponent={(row) => {
+              return <div style={{ height: '200px', border: '5px solid green' }} />;
+            }}
+          />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
