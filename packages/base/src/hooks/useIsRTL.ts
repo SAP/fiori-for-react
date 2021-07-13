@@ -5,6 +5,9 @@ import { RefObject, useState } from 'react';
 const GLOBAL_DIR_CSS_VAR = '--_ui5_dir';
 
 const detectRTL = (elementRef: RefObject<HTMLElement>) => {
+  if (!elementRef.current) {
+    return getRTL();
+  }
   const doc = window.document;
   const dirValues = ['ltr', 'rtl']; // exclude "auto" and "" from all calculations
   const locallyAppliedDir = getComputedStyle(elementRef.current).getPropertyValue(GLOBAL_DIR_CSS_VAR);
@@ -29,7 +32,6 @@ const detectRTL = (elementRef: RefObject<HTMLElement>) => {
 
 const useIsRTL = (elementRef: RefObject<HTMLElement>): boolean => {
   const [isRTL, setRTL] = useState<boolean>(getRTL()); // use config RTL as best guess
-
   useIsomorphicLayoutEffect(() => {
     setRTL(detectRTL(elementRef)); // update immediately while rendering
     const targets = [document.documentElement, document.body, elementRef.current].filter(Boolean);

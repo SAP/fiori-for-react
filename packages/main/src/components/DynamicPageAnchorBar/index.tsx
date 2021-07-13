@@ -1,7 +1,9 @@
 import { addCustomCSS } from '@ui5/webcomponents-base/dist/Theming';
 import '@ui5/webcomponents-icons/dist/slim-arrow-down.js';
 import '@ui5/webcomponents-icons/dist/slim-arrow-up.js';
-import { useI18nBundle } from '@ui5/webcomponents-react-base/dist/hooks';
+import { StyleClassHelper } from '@ui5/webcomponents-react-base/dist/StyleClassHelper';
+import { enrichEventWithDetails } from '@ui5/webcomponents-react-base/dist/Utils';
+import { useConsolidatedRef, useI18nBundle, useIsRTL } from '@ui5/webcomponents-react-base/dist/hooks';
 import { ThemingParameters } from '@ui5/webcomponents-react-base/dist/ThemingParameters';
 import {
   COLLAPSE_HEADER,
@@ -11,7 +13,8 @@ import {
 } from '@ui5/webcomponents-react/dist/assets/i18n/i18n-defaults';
 import { Button } from '@ui5/webcomponents-react/dist/Button';
 import { ToggleButton } from '@ui5/webcomponents-react/dist/ToggleButton';
-import React, { CSSProperties, forwardRef, RefObject, useCallback } from 'react';
+import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
+import React, { forwardRef, RefObject, useCallback } from 'react';
 import { createUseStyles } from 'react-jss';
 
 addCustomCSS(
@@ -62,6 +65,10 @@ const anchorBarStyles = {
       left: '100%'
     }
   },
+  anchorBarActionButtonRtl: {
+    marginRight: `-0.6875rem`,
+    marginLeft: 0
+  },
   anchorBarActionButtonExpandable: {},
   anchorBarActionButtonPinnable: {},
   anchorBarActionPinnableAndExpandable: {
@@ -74,20 +81,27 @@ const anchorBarStyles = {
     '&$anchorBarActionButtonExpandable': {
       marginLeft: '-1.75rem'
     }
+  },
+  anchorBarActionPinnableAndExpandableRtl: {
+    '&$anchorBarActionButtonPinnable': {
+      marginRight: '0.25rem',
+      '&:before': {
+        backgroundColor: 'white'
+      }
+    },
+    '&$anchorBarActionButtonExpandable': {
+      marginRight: '-1.75rem'
+    }
   }
 };
 
 const useStyles = createUseStyles(anchorBarStyles, { name: 'DynamicPageAnchorBar' });
 
-interface Props {
+interface Props extends CommonProps {
   /**
-   * Determines the style of the anchor bar.
+   * Determines if the header content is visible.
    */
-  style?: CSSProperties;
-  /**
-   * Determines the height of the header content.
-   */
-  headerContentHeight: number;
+  headerContentVisible: boolean;
   /**
    * Determines if the header content is pinnable .
    */
@@ -121,7 +135,7 @@ interface Props {
 const DynamicPageAnchorBar = forwardRef((props: Props, ref: RefObject<HTMLElement>) => {
   const {
     showHideHeaderButton,
-    headerContentHeight,
+    headerContentVisible,
     headerContentPinnable,
     headerPinned,
     setHeaderPinned,
@@ -131,8 +145,10 @@ const DynamicPageAnchorBar = forwardRef((props: Props, ref: RefObject<HTMLElemen
   } = props;
 
   const classes = useStyles();
+  const anchorBarRef = useConsolidatedRef<HTMLDivElement>(ref);
+  const isRTL = useIsRTL(anchorBarRef);
 
-  const shouldRenderHeaderPinnableButton = headerContentPinnable && headerContentHeight > 0;
+  const shouldRenderHeaderPinnableButton = headerContentPinnable && headerContentVisible;
   const showBothActions = shouldRenderHeaderPinnableButton && showHideHeaderButton;
 
   const onPinHeader = useCallback(
@@ -142,35 +158,47 @@ const DynamicPageAnchorBar = forwardRef((props: Props, ref: RefObject<HTMLElemen
     [setHeaderPinned]
   );
 
-  const i18nBundle = useI18nBundle('@ui5/webcomponents-react');
+  const anchorBarActionButtonClasses = StyleClassHelper.of(classes.anchorBarActionButton);
+  if (isRTL) {
+    anchorBarActionButtonClasses.put(classes.anchorBarActionButtonRtl);
+  }
 
+  const bothActionClasses = StyleClassHelper.of(classes.anchorBarActionPinnableAndExpandable);
+  if (isRTL) {
+    bothActionClasses.put(classes.anchorBarActionPinnableAndExpandableRtl);
+  }
+
+  const onToggleHeaderButtonClick = (e) => {
+    onToggleHeaderContentVisibility(enrichEventWithDetails(e, { visible: !headerContentVisible }));
+  };
+  const i18nBundle = useI18nBundle('@ui5/webcomponents-react');
   return (
     <section
       style={style}
       role="navigation"
       className={showHideHeaderButton || headerContentPinnable ? classes.anchorBarActionButton : null}
-      ref={ref}
+      ref={anchorBarRef}
     >
       {showHideHeaderButton && (
         <Button
-          icon={headerContentHeight === 0 ? 'slim-arrow-down' : 'slim-arrow-up'}
+          icon={!headerContentVisible ? 'slim-arrow-down' : 'slim-arrow-up'}
           data-ui5wcr-dynamic-page-header-action=""
-          className={`${classes.anchorBarActionButton} ${classes.anchorBarActionButtonExpandable} ${
-            showBothActions ? classes.anchorBarActionPinnableAndExpandable : ''
+          className={`${anchorBarActionButtonClasses.className} ${classes.anchorBarActionButtonExpandable} ${
+            showBothActions ? bothActionClasses.className : ''
           }`}
-          onClick={onToggleHeaderContentVisibility}
+          onClick={onToggleHeaderButtonClick}
           onMouseOver={onHoverToggleButton}
           onMouseLeave={onHoverToggleButton}
-          tooltip={i18nBundle.getText(headerContentHeight === 0 ? EXPAND_HEADER : COLLAPSE_HEADER)}
-          aria-label={i18nBundle.getText(headerContentHeight === 0 ? EXPAND_HEADER : COLLAPSE_HEADER)}
+          tooltip={i18nBundle.getText(!headerContentVisible ? EXPAND_HEADER : COLLAPSE_HEADER)}
+          aria-label={i18nBundle.getText(!headerContentVisible ? EXPAND_HEADER : COLLAPSE_HEADER)}
         />
       )}
       {shouldRenderHeaderPinnableButton && (
         <ToggleButton
           icon="pushpin-off"
           data-ui5wcr-dynamic-page-header-action=""
-          className={`${classes.anchorBarActionButton} ${classes.anchorBarActionButtonPinnable} ${
-            showBothActions ? classes.anchorBarActionPinnableAndExpandable : ''
+          className={`${anchorBarActionButtonClasses.className} ${classes.anchorBarActionButtonPinnable} ${
+            showBothActions ? bothActionClasses.className : ''
           }`}
           pressed={headerPinned}
           onClick={onPinHeader}

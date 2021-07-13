@@ -1,11 +1,11 @@
-import { createUseStyles } from 'react-jss';
 import { StyleClassHelper } from '@ui5/webcomponents-react-base/dist/StyleClassHelper';
 import { AvatarSize } from '@ui5/webcomponents-react/dist/AvatarSize';
-import React, { ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import React, { CSSProperties, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import { createUseStyles } from 'react-jss';
 
 const styles = {
   base: {
-    margin: 'var(--_ui5wcr_ObjectPage_avatar_margin)', // defined in ObjectPage JSS
+    alignSelf: 'center',
     opacity: 0
   },
   hidden: {
@@ -35,10 +35,11 @@ const useStyles = createUseStyles(styles, {
 export interface CollapsedAvatarPropTypes {
   image?: string | ReactElement;
   imageShapeCircle?: boolean;
+  style?: CSSProperties;
 }
 
 export const CollapsedAvatar = (props: CollapsedAvatarPropTypes) => {
-  const { image, imageShapeCircle } = props;
+  const { image, imageShapeCircle, style } = props;
   const classes = useStyles();
   const [isMounted, setIsMounted] = useState(false);
   const domRef = useRef();
@@ -78,7 +79,7 @@ export const CollapsedAvatar = (props: CollapsedAvatarPropTypes) => {
   }
 
   return (
-    <div ref={domRef} className={containerClasses.valueOf()}>
+    <div ref={domRef} className={containerClasses.valueOf()} style={style}>
       {avatarContent}
     </div>
   );

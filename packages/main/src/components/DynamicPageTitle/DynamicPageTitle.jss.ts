@@ -1,12 +1,7 @@
-import { sapUiResponsiveContentPadding, sapUiTinyMarginBeginEnd } from '@ui5/webcomponents-react-base/dist/spacing';
 import { ThemingParameters } from '@ui5/webcomponents-react-base/dist/ThemingParameters';
-import { isIE } from '@ui5/webcomponents-react-base/dist/Device';
-
-const padding = isIE() ? { padding: '0 2rem' } : { ...sapUiResponsiveContentPadding };
 
 export const DynamicPageTitleStyles = {
   container: {
-    ...padding,
     backgroundColor: ThemingParameters.sapObjectHeader_Background,
     minHeight: '3rem',
     wordWrap: 'break-word',
@@ -18,6 +13,14 @@ export const DynamicPageTitleStyles = {
     position: 'sticky',
     top: 0,
     zIndex: 2,
+    cursor: 'pointer',
+    '&[data-not-clickable="true"]': {
+      pointerEvents: 'none',
+      cursor: 'unset',
+      '&:hover': {
+        backgroundColor: ThemingParameters.sapObjectHeader_Background
+      }
+    },
     '&:hover': {
       // TODO background color should be sapObjectHeader_Hover_Background (same color as sapTile_Active_Background)
       backgroundColor: ThemingParameters.sapTile_Active_Background
@@ -34,39 +37,28 @@ export const DynamicPageTitleStyles = {
   titleMainSection: {
     flexGrow: 1,
     width: '100%',
-    alignItems: 'flex-start'
+    alignItems: 'baseline'
   },
   title: {
     color: ThemingParameters.sapGroup_TitleTextColor,
     fontSize: ThemingParameters.sapFontHeader3Size,
-    padding: '0.3125rem 0 0 0',
+    whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',
-    flexShrink: 1
+    flexShrink: 1,
+    paddingTop: '0.3125rem'
   },
-  subTitle: {
+  subTitleRight: {
     color: ThemingParameters.sapContent_LabelColor,
     fontSize: ThemingParameters.sapFontSize,
-    marginTop: '0.25rem',
-    marginBottom: '0.25rem'
+    whiteSpace: 'nowrap'
+  },
+  subTitleBottom: {
+    color: ThemingParameters.sapContent_LabelColor,
+    fontSize: ThemingParameters.sapFontSize,
+    marginTop: '0.25rem'
   },
   content: {
-    flexShrink: 1.6,
-    padding: '0 0 0 1rem'
-  },
-  actions: {
-    flexShrink: 1.6,
-    paddingLeft: '0.5rem',
-    marginLeft: 'auto'
-  },
-  navigationActions: {
-    flexShrink: 1.6,
-    paddingLeft: '0.5rem',
-    marginLeft: 'auto'
-  },
-  navigationActionsSeparator: {
-    background: ThemingParameters.sapBackgroundColor,
-    width: '0.0625rem',
-    height: '2rem',
-    ...sapUiTinyMarginBeginEnd
+    display: 'flex',
+    flexShrink: 1.6
   }
 };

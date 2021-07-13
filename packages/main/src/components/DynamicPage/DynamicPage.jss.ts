@@ -1,4 +1,3 @@
-import { sapUiResponsiveContentPadding } from '@ui5/webcomponents-react-base/dist/spacing';
 import { ThemingParameters } from '@ui5/webcomponents-react-base/dist/ThemingParameters';
 
 export const DynamicPageCssVariables = {
@@ -43,8 +42,7 @@ export const styles = {
     backgroundColor: ThemingParameters.sapObjectHeader_Background
   },
   contentContainer: {
-    ...sapUiResponsiveContentPadding,
-    paddingTop: '1rem !important',
+    paddingTop: '1rem',
     boxSizing: 'border-box',
     width: '100%',
     height: 'auto',

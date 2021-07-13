@@ -10,6 +10,7 @@ exports[`ObjectPageSection ObjectPage w/ lowercase title 1`] = `
     <div
       aria-level="3"
       class="ObjectPageSection-header"
+      data-component-name="ObjectPageSectionHeading"
       role="heading"
     >
       <div
@@ -23,6 +24,7 @@ exports[`ObjectPageSection ObjectPage w/ lowercase title 1`] = `
     >
       <div
         class="ObjectPageSection-sectionContentInner"
+        data-component-name="ObjectPageSectionContent"
       >
         This is my Text
       </div>
@@ -41,6 +43,7 @@ exports[`ObjectPageSection Renders with children 1`] = `
     <div
       aria-level="3"
       class="ObjectPageSection-header"
+      data-component-name="ObjectPageSectionHeading"
       role="heading"
     >
       <div
@@ -54,6 +57,7 @@ exports[`ObjectPageSection Renders with children 1`] = `
     >
       <div
         class="ObjectPageSection-sectionContentInner"
+        data-component-name="ObjectPageSectionContent"
       >
         This is my Text
       </div>

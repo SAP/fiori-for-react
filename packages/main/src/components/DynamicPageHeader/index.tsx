@@ -1,14 +1,15 @@
-import { createUseStyles } from 'react-jss';
+import { isIE } from '@ui5/webcomponents-react-base/dist/Device';
 import { StyleClassHelper } from '@ui5/webcomponents-react-base/dist/StyleClassHelper';
 import { usePassThroughHtmlProps } from '@ui5/webcomponents-react-base/dist/usePassThroughHtmlProps';
-import { FlexBox } from '@ui5/webcomponents-react/dist/FlexBox';
-import { FlexBoxAlignItems } from '@ui5/webcomponents-react/dist/FlexBoxAlignItems';
-import React, { FC, forwardRef, ReactNode, ReactNodeArray, Ref, useMemo } from 'react';
 import { CommonProps } from '@ui5/webcomponents-react/interfaces/CommonProps';
+import React, { FC, forwardRef, ReactNode, ReactNodeArray, Ref, useMemo } from 'react';
+import { createUseStyles } from 'react-jss';
 import { DynamicPageHeaderStyles } from './DynamicPageHeader.jss';
-import { isIE } from '@ui5/webcomponents-react-base/dist/Device';
 
 export interface DynamicPageHeaderProps extends CommonProps {
+  /**
+   * Content of the `DynamicPageHeader`.
+   */
   children?: ReactNode | ReactNodeArray;
 }
 
@@ -55,13 +56,13 @@ const DynamicPageHeader: FC<DynamicPageHeaderProps> = forwardRef((props: Interna
   return (
     <div
       title={tooltip}
-      style={headerStyles}
       ref={ref}
+      {...passThroughProps}
       className={classNames.className}
       data-component-name="DynamicPageHeader"
-      {...passThroughProps}
+      style={headerStyles}
     >
-      <FlexBox alignItems={FlexBoxAlignItems.Start}>{children}</FlexBox>
+      {children}
     </div>
   );
 });

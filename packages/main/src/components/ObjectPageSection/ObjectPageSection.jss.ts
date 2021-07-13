@@ -1,9 +1,7 @@
-import { sapUiResponsiveContentPadding } from '@ui5/webcomponents-react-base/dist/spacing';
 import { ThemingParameters } from '@ui5/webcomponents-react-base/dist/ThemingParameters';
 
 const styles = {
   header: {
-    ...sapUiResponsiveContentPadding,
     borderBottom: `1px solid ${ThemingParameters.sapGroup_TitleBorderColor}`,
     boxSizing: 'border-box',
     height: '2.75rem'
@@ -27,7 +25,6 @@ const styles = {
     whiteSpace: 'normal'
   },
   sectionContentInner: {
-    ...sapUiResponsiveContentPadding,
     paddingTop: '1rem',
     paddingBottom: '2rem',
     fontFamily: ThemingParameters.sapFontFamily

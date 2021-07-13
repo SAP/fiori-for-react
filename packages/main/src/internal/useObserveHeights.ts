@@ -6,29 +6,27 @@ export const useObserveHeights = (objectPage, topHeader, headerContentRef, ancho
   const [topHeaderHeight, setTopHeaderHeight] = useState(0);
   const [headerContentHeight, setHeaderContentHeight] = useState(0);
   const [isIntersecting, setIsIntersecting] = useState(true);
-
   useEffect(() => {
     const headerIntersectionObserver = new IntersectionObserver(
       ([header]) => {
         if (header.isIntersecting) {
           setIsIntersecting(true);
-          setHeaderContentHeight((header.target as HTMLElement).offsetHeight);
         } else {
           setIsIntersecting(false);
           setHeaderContentHeight(0);
         }
       },
-      { rootMargin: `-${topHeaderHeight}px 0px 0px 0px`, root: objectPage.current, threshold: 0.3 }
+      { rootMargin: `-${topHeaderHeight}px 0px 0px 0px`, root: objectPage?.current, threshold: 0.3 }
     );
 
-    if (headerContentRef.current) {
+    if (headerContentRef?.current) {
       headerIntersectionObserver.observe(headerContentRef.current);
     }
 
     return () => {
       headerIntersectionObserver.disconnect();
     };
-  }, [topHeaderHeight, setHeaderContentHeight, headerContentRef, setIsIntersecting]);
+  }, [topHeaderHeight, setHeaderContentHeight, headerContentRef.current, setIsIntersecting]);
 
   // top header
   useEffect(() => {
@@ -38,31 +36,35 @@ export const useObserveHeights = (objectPage, topHeader, headerContentRef, ancho
       // Safari doesn't implement `borderBoxSize`
       setTopHeaderHeight(borderBoxSize?.blockSize ?? header.target.getBoundingClientRect().height);
     });
-    if (topHeader.current) {
+    if (topHeader?.current) {
       headerContentResizeObserver.observe(topHeader.current);
     }
     return () => {
       headerContentResizeObserver.disconnect();
     };
-  }, [topHeader.current, setTopHeaderHeight]);
+  }, [topHeader?.current, setTopHeaderHeight]);
 
   // header content
   useEffect(() => {
     const headerContentResizeObserver = new ResizeObserver(([headerContent]) => {
       if (isIntersecting) {
-        setHeaderContentHeight(headerContent?.contentRect?.height ?? 0);
+        // Firefox implements `borderBoxSize` as a single content rect, rather than an array
+        const borderBoxSize = Array.isArray(headerContent.borderBoxSize)
+          ? headerContent.borderBoxSize[0]
+          : headerContent.borderBoxSize;
+        // Safari doesn't implement `borderBoxSize`
+        setHeaderContentHeight(borderBoxSize?.blockSize ?? headerContent.target.getBoundingClientRect().height);
       }
     });
 
-    if (headerContentRef.current) {
+    if (headerContentRef?.current) {
       headerContentResizeObserver.observe(headerContentRef.current);
     }
     return () => {
       headerContentResizeObserver.disconnect();
     };
-  }, [headerContentRef.current, setHeaderContentHeight, isIntersecting]);
-
-  const anchorBarHeight = anchorBarRef.current?.offsetHeight ?? 33;
+  }, [headerContentRef?.current, setHeaderContentHeight, isIntersecting]);
+  const anchorBarHeight = anchorBarRef?.current?.offsetHeight ?? 33;
   const totalHeaderHeight = (noHeader ? 0 : topHeaderHeight + headerContentHeight) + anchorBarHeight;
 
   return { topHeaderHeight, headerContentHeight, anchorBarHeight, totalHeaderHeight };

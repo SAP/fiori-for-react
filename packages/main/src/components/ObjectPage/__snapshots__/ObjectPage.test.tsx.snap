@@ -1,5 +1,461 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ObjectPage Default with Sections 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectPage-objectPage sapScrollBar"
+    data-component-name="ObjectPage"
+  >
+    <header
+      aria-roledescription="Object Page header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
+      role="banner"
+      style="display: grid;"
+    />
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
+    >
+      <ui5-tabcontainer
+        collapsed="true"
+        data-component-name="ObjectPageTabContainer"
+        fixed="true"
+        show-overflow="true"
+        tab-layout="Standard"
+        tabs-placement="Top"
+        ui5-tabcontainer=""
+      >
+        <ui5-object-page-anchor-tab
+          data-index="0"
+          data-section-id="1"
+          selected="true"
+          text="Title 1"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="1"
+          data-section-id="2"
+          text="Title 2"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="2"
+          data-section-id="3"
+          text="Title 3"
+          ui5-object-page-anchor-tab=""
+        />
+      </ui5-tabcontainer>
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
+    >
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-1"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title 1
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            Content 1
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-2"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title 2
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <ui5-label
+              ui5-label=""
+            >
+              Content 2
+            </ui5-label>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-3"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title 3
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <span
+              class="Text-text"
+            >
+              Content 3
+            </span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectPage Default with SubSections 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectPage-objectPage sapScrollBar"
+    data-component-name="ObjectPage"
+  >
+    <header
+      aria-roledescription="Object Page header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
+      role="banner"
+      style="display: grid;"
+    />
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
+    >
+      <ui5-tabcontainer
+        collapsed="true"
+        data-component-name="ObjectPageTabContainer"
+        fixed="true"
+        show-overflow="true"
+        tab-layout="Standard"
+        tabs-placement="Top"
+        ui5-tabcontainer=""
+      >
+        <ui5-object-page-anchor-tab
+          data-index="0"
+          data-section-id="1"
+          selected="true"
+          text="Title Section 1"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="1"
+          data-section-id="2"
+          text="Title Section 2"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="2"
+          data-section-id="3"
+          text="Title Section 3"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+        <ui5-object-page-anchor-tab
+          data-index="3"
+          data-section-id="4"
+          text="Title Section 4"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+      </ui5-tabcontainer>
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
+    >
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-1"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 1
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <ui5-label
+              ui5-label=""
+            >
+              Content Section 1
+            </ui5-label>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-2"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 2
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div>
+              Content Section 2
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-3"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 3
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-4"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 4
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`ObjectPage IconTabBar Mode 1`] = `
 <DocumentFragment>
   <div
@@ -8,666 +464,149 @@ exports[`ObjectPage IconTabBar Mode 1`] = `
   >
     <header
       aria-roledescription="Object Page header"
-      class="ObjectPage-header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
       role="banner"
-    >
-      <div
-        class="ObjectPage-titleBar"
-      >
-        <div
-          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
-        >
-          <div
-            class="FlexBox-flexBox FlexBox-flexBoxDirectionColumn FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap ObjectPage-container"
-          >
-            <div
-              class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsBaseline FlexBox-flexWrapNoWrap"
-            >
-              <ui5-title
-                class="ObjectPage-title"
-                level="H3"
-                ui5-title=""
-              >
-                Fiori Object Page Title
-              </ui5-title>
-              <ui5-label
-                class="ObjectPage-subTitle"
-                ui5-label=""
-              >
-                Sub Title
-              </ui5-label>
-              <div
-                class="ObjectPage-keyInfos"
-              />
-            </div>
-          </div>
-          <div
-            class="Toolbar-outerContainer Toolbar-clear Toolbar-transparent"
-          >
-            <div
-              class="Toolbar-toolbar"
-            >
-              <span
-                class="spacer"
-                style="flex-grow: 1;"
-              />
-              <div>
-                <ui5-button
-                  design="Default"
-                  ui5-button=""
-                >
-                  Action
-                </ui5-button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+      style="display: grid;"
+    />
     <div
-      class="ObjectPage-contentHeader"
-    >
-      <span
-        class="ObjectPage-headerCustomContent"
-      >
-        <div
-          style="display: flex; flex-direction: column;"
-        >
-          <ui5-link
-            design="Default"
-            href="https://www.sap.com"
-            ui5-link=""
-          >
-            www.myurl.com
-          </ui5-link>
-          <span
-            class="Text-text"
-          >
-            Address 1
-          </span>
-          <span
-            class="Text-text"
-          >
-            Address 2
-          </span>
-          <span
-            class="Text-text"
-          >
-            Address 3
-          </span>
-        </div>
-      </span>
-    </div>
-    <section
-      class="ObjectPage-anchorBar"
-      role="navigation"
-      style="top: 0px;"
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
     >
       <ui5-tabcontainer
         collapsed="true"
+        data-component-name="ObjectPageTabContainer"
         fixed="true"
         show-overflow="true"
         tab-layout="Standard"
         tabs-placement="Top"
         ui5-tabcontainer=""
       >
-        <ui5-tab
+        <ui5-object-page-anchor-tab
           data-index="0"
           data-section-id="1"
-          selected="true"
-          semantic-color="Default"
-          text="Test 1"
-          ui5-tab=""
+          text="Title Section 1"
+          ui5-object-page-anchor-tab=""
         />
-        <ui5-tab
+        <ui5-object-page-anchor-tab
           data-index="1"
           data-section-id="2"
-          semantic-color="Default"
-          text="Test 2"
-          ui5-tab=""
+          text="Title Section 2"
+          ui5-object-page-anchor-tab=""
         />
-        <ui5-tab
+        <ui5-object-page-anchor-tab
           data-index="2"
           data-section-id="3"
-          semantic-color="Default"
-          text="Test 3"
-          ui5-tab=""
+          selected="true"
+          text="Title Section 3"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
         />
-        <ui5-tab
+        <ui5-object-page-anchor-tab
           data-index="3"
           data-section-id="4"
-          semantic-color="Default"
-          text="Test 4"
-          ui5-tab=""
-        />
-        <ui5-tab
-          data-index="4"
-          data-section-id="5"
-          semantic-color="Default"
-          text="Test 5"
-          ui5-tab=""
+          text="Title Section 4"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
         />
       </ui5-tabcontainer>
-      <ui5-button
-        aria-label="Expand Header"
-        class="ObjectPageAnchorBar-anchorBarActionButton ObjectPageAnchorBar-anchorBarActionButtonExpandable "
-        data-ui5wcr-object-page-header-action=""
-        design="Default"
-        icon="slim-arrow-down"
-        title="Expand Header"
-        ui5-button=""
-      />
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-1"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
-      >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        >
-          Test 1
-        </div>
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          <ui5-label
-            ui5-label=""
-          >
-            My Content 1
-          </ui5-label>
-        </div>
-      </div>
-    </section>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`ObjectPage Just Some Sections 1`] = `
-<DocumentFragment>
-  <div
-    class="ObjectPage-objectPage sapScrollBar ObjectPage-iconTabBarMode"
-    data-component-name="ObjectPage"
-  >
-    <header
-      aria-roledescription="Object Page header"
-      class="ObjectPage-header"
-      role="banner"
-    >
-      <div
-        class="ObjectPage-titleBar"
-      >
-        <div
-          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
-        >
-          <div
-            class="FlexBox-flexBox FlexBox-flexBoxDirectionColumn FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap ObjectPage-container"
-          >
-            <div
-              class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsBaseline FlexBox-flexWrapNoWrap"
-            >
-              <ui5-title
-                class="ObjectPage-title"
-                level="H3"
-                ui5-title=""
-              />
-              <ui5-label
-                class="ObjectPage-subTitle"
-                ui5-label=""
-              />
-              <div
-                class="ObjectPage-keyInfos"
-              />
-            </div>
-          </div>
-          <div
-            class="Toolbar-outerContainer Toolbar-clear Toolbar-transparent"
-          >
-            <div
-              class="Toolbar-toolbar"
-            >
-              <span
-                class="spacer"
-                style="flex-grow: 1;"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+    </div>
     <div
-      class="ObjectPage-contentHeader"
-    />
-    <section
-      class="ObjectPage-anchorBar"
-      role="navigation"
-      style="top: 0px;"
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
     >
-      <ui5-tabcontainer
-        collapsed="true"
-        fixed="true"
-        show-overflow="true"
-        tab-layout="Standard"
-        tabs-placement="Top"
-        ui5-tabcontainer=""
-      >
-        <ui5-tab
-          data-index="0"
-          data-section-id="1"
-          selected="true"
-          semantic-color="Default"
-          text=""
-          ui5-tab=""
-        />
-        <ui5-tab
-          data-index="1"
-          data-section-id="2"
-          semantic-color="Default"
-          text=""
-          ui5-tab=""
-        />
-      </ui5-tabcontainer>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-1"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-3"
+        role="region"
       >
         <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        />
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          Test
-        </div>
-      </div>
-    </section>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`ObjectPage Key Infos 1`] = `
-<DocumentFragment>
-  <div
-    class="ObjectPage-objectPage sapScrollBar"
-    data-component-name="ObjectPage"
-  >
-    <header
-      aria-roledescription="Object Page header"
-      class="ObjectPage-header"
-      role="banner"
-    >
-      <div
-        class="ObjectPage-titleBar"
-      >
-        <div
-          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
         >
           <div
-            class="FlexBox-flexBox FlexBox-flexBoxDirectionColumn FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap ObjectPage-container"
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
           >
-            <nav
-              aria-label="Breadcrumb Trail"
-            >
-              <ol
-                class="Breadcrumbs-list"
-              >
-                <li>
-                  <ui5-link
-                    data-breadcrumb-index="0"
-                    design="Default"
-                    href="PathSegment1"
-                    tabindex="0"
-                    ui5-link=""
-                  >
-                    Path1
-                  </ui5-link>
-                  <ui5-label
-                    aria-hidden="true"
-                    class="Breadcrumbs-separatorInline"
-                    ui5-label=""
-                  >
-                    /
-                  </ui5-label>
-                </li>
-                <li>
-                  <ui5-link
-                    data-breadcrumb-index="1"
-                    design="Default"
-                    href="PathSegment2"
-                    tabindex="-1"
-                    ui5-link=""
-                  >
-                    Path2
-                  </ui5-link>
-                  <ui5-label
-                    aria-hidden="true"
-                    class="Breadcrumbs-separatorInline"
-                    ui5-label=""
-                  >
-                    /
-                  </ui5-label>
-                </li>
-                <li>
-                  <ui5-link
-                    data-breadcrumb-index="2"
-                    design="Default"
-                    href="PathSegment3"
-                    tabindex="-1"
-                    ui5-link=""
-                  />
-                </li>
-              </ol>
-            </nav>
+            Title Section 3
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
             <div
-              class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsBaseline FlexBox-flexWrapNoWrap"
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.1"
+              role="region"
+              tabindex="-1"
             >
-              <ui5-title
-                class="ObjectPage-title"
-                level="H3"
-                ui5-title=""
-              />
-              <ui5-label
-                class="ObjectPage-subTitle"
-                ui5-label=""
-              />
               <div
-                class="ObjectPage-keyInfos"
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
               >
-                <div>
-                  <ui5-title
-                    level="H5"
-                    ui5-title=""
-                  >
-                    Key Info 1
-                  </ui5-title>
-                  <span
-                    class="Text-text"
-                  >
-                    Value 1
-                  </span>
-                </div>
-                <div>
-                  <ui5-title
-                    level="H5"
-                    ui5-title=""
-                  >
-                    Key Info 2
-                  </ui5-title>
-                  <span
-                    class="Text-text"
-                  >
-                    Value 2
-                  </span>
-                </div>
-                <div>
-                  <ui5-title
-                    level="H5"
-                    ui5-title=""
-                  >
-                    Key Info 3
-                  </ui5-title>
-                  <span
-                    class="Text-text"
-                  >
-                    Value 3
-                  </span>
-                </div>
+                Title SubSection 3.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.3
               </div>
             </div>
           </div>
-          <div
-            class="Toolbar-outerContainer Toolbar-clear Toolbar-transparent"
-          >
-            <div
-              class="Toolbar-toolbar"
-            >
-              <span
-                class="spacer"
-                style="flex-grow: 1;"
-              />
-            </div>
-          </div>
         </div>
-      </div>
-    </header>
-    <div
-      class="ObjectPage-contentHeader"
-    />
-    <section
-      class="ObjectPage-anchorBar"
-      role="navigation"
-      style="top: 0px;"
-    >
-      <ui5-tabcontainer
-        collapsed="true"
-        fixed="true"
-        show-overflow="true"
-        tab-layout="Standard"
-        tabs-placement="Top"
-        ui5-tabcontainer=""
-      >
-        <ui5-tab
-          data-index="0"
-          data-section-id="1"
-          selected="true"
-          semantic-color="Default"
-          text=""
-          ui5-tab=""
-        />
-        <ui5-tab
-          data-index="1"
-          data-section-id="2"
-          semantic-color="Default"
-          text=""
-          ui5-tab=""
-        />
-      </ui5-tabcontainer>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-1"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
-      >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        />
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          Test
-        </div>
-      </div>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-2"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
-      >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        />
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          Test 2
-        </div>
-      </div>
-    </section>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`ObjectPage No Header 1`] = `
-<DocumentFragment>
-  <div
-    class="ObjectPage-objectPage sapScrollBar ObjectPage-noHeader"
-    data-component-name="ObjectPage"
-  >
-    <header
-      aria-roledescription="Object Page header"
-      class="ObjectPage-header"
-      role="banner"
-    >
-      <div
-        class="ObjectPage-titleBar"
-      >
-        <div
-          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
-        >
-          <div
-            class="FlexBox-flexBox FlexBox-flexBoxDirectionColumn FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap ObjectPage-container"
-          >
-            <div
-              class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsBaseline FlexBox-flexWrapNoWrap"
-            >
-              <ui5-title
-                class="ObjectPage-title"
-                level="H3"
-                ui5-title=""
-              />
-              <ui5-label
-                class="ObjectPage-subTitle"
-                ui5-label=""
-              />
-              <div
-                class="ObjectPage-keyInfos"
-              />
-            </div>
-          </div>
-          <div
-            class="Toolbar-outerContainer Toolbar-clear Toolbar-transparent"
-          >
-            <div
-              class="Toolbar-toolbar"
-            >
-              <span
-                class="spacer"
-                style="flex-grow: 1;"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div
-      class="ObjectPage-contentHeader"
-    />
-    <section
-      class="ObjectPage-anchorBar"
-      role="navigation"
-      style="top: 0px;"
-    >
-      <ui5-tabcontainer
-        collapsed="true"
-        fixed="true"
-        show-overflow="true"
-        tab-layout="Standard"
-        tabs-placement="Top"
-        ui5-tabcontainer=""
-      >
-        <ui5-tab
-          data-index="0"
-          data-section-id="1"
-          semantic-color="Default"
-          text=""
-          ui5-tab=""
-        />
-        <ui5-tab
-          data-index="1"
-          data-section-id="2"
-          selected="true"
-          semantic-color="Default"
-          text=""
-          ui5-tab=""
-        />
-      </ui5-tabcontainer>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-1"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
-      >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        />
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          Test
-        </div>
-      </div>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-2"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
-      >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        />
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          Test 2
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -680,67 +619,30 @@ exports[`ObjectPage Not crashing with 0 sections 1`] = `
   >
     <header
       aria-roledescription="Object Page header"
-      class="ObjectPage-header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
       role="banner"
-    >
-      <div
-        class="ObjectPage-titleBar"
-      >
-        <div
-          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
-        >
-          <div
-            class="FlexBox-flexBox FlexBox-flexBoxDirectionColumn FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap ObjectPage-container"
-          >
-            <div
-              class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsBaseline FlexBox-flexWrapNoWrap"
-            >
-              <ui5-title
-                class="ObjectPage-title"
-                level="H3"
-                ui5-title=""
-              />
-              <ui5-label
-                class="ObjectPage-subTitle"
-                ui5-label=""
-              />
-              <div
-                class="ObjectPage-keyInfos"
-              />
-            </div>
-          </div>
-          <div
-            class="Toolbar-outerContainer Toolbar-clear Toolbar-transparent"
-          >
-            <div
-              class="Toolbar-toolbar"
-            >
-              <span
-                class="spacer"
-                style="flex-grow: 1;"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div
-      class="ObjectPage-contentHeader"
+      style="display: grid;"
     />
-    <section
-      class="ObjectPage-anchorBar"
-      role="navigation"
-      style="top: 0px;"
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
     >
       <ui5-tabcontainer
         collapsed="true"
+        data-component-name="ObjectPageTabContainer"
         fixed="true"
         show-overflow="true"
         tab-layout="Standard"
         tabs-placement="Top"
         ui5-tabcontainer=""
       />
-    </section>
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -753,100 +655,65 @@ exports[`ObjectPage Not crashing with 1 section - Default Mode 1`] = `
   >
     <header
       aria-roledescription="Object Page header"
-      class="ObjectPage-header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
       role="banner"
-    >
-      <div
-        class="ObjectPage-titleBar"
-      >
-        <div
-          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
-        >
-          <div
-            class="FlexBox-flexBox FlexBox-flexBoxDirectionColumn FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap ObjectPage-container"
-          >
-            <div
-              class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsBaseline FlexBox-flexWrapNoWrap"
-            >
-              <ui5-title
-                class="ObjectPage-title"
-                level="H3"
-                ui5-title=""
-              />
-              <ui5-label
-                class="ObjectPage-subTitle"
-                ui5-label=""
-              />
-              <div
-                class="ObjectPage-keyInfos"
-              />
-            </div>
-          </div>
-          <div
-            class="Toolbar-outerContainer Toolbar-clear Toolbar-transparent"
-          >
-            <div
-              class="Toolbar-toolbar"
-            >
-              <span
-                class="spacer"
-                style="flex-grow: 1;"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div
-      class="ObjectPage-contentHeader"
+      style="display: grid;"
     />
-    <section
-      class="ObjectPage-anchorBar"
-      role="navigation"
-      style="top: 0px;"
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
     >
       <ui5-tabcontainer
         collapsed="true"
+        data-component-name="ObjectPageTabContainer"
         fixed="true"
         show-overflow="true"
         tab-layout="Standard"
         tabs-placement="Top"
         ui5-tabcontainer=""
       >
-        <ui5-tab
+        <ui5-object-page-anchor-tab
           data-index="0"
           data-section-id="1"
           selected="true"
-          semantic-color="Default"
           text=""
-          ui5-tab=""
+          ui5-object-page-anchor-tab=""
         />
       </ui5-tabcontainer>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-1"
-      role="region"
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
     >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-1"
+        role="region"
       >
         <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        />
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
         >
-          Test
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          />
         </div>
-      </div>
-    </section>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            Test
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -859,105 +726,70 @@ exports[`ObjectPage Not crashing with 1 section - IconTabBar Mode 1`] = `
   >
     <header
       aria-roledescription="Object Page header"
-      class="ObjectPage-header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
       role="banner"
-    >
-      <div
-        class="ObjectPage-titleBar"
-      >
-        <div
-          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
-        >
-          <div
-            class="FlexBox-flexBox FlexBox-flexBoxDirectionColumn FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap ObjectPage-container"
-          >
-            <div
-              class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsBaseline FlexBox-flexWrapNoWrap"
-            >
-              <ui5-title
-                class="ObjectPage-title"
-                level="H3"
-                ui5-title=""
-              />
-              <ui5-label
-                class="ObjectPage-subTitle"
-                ui5-label=""
-              />
-              <div
-                class="ObjectPage-keyInfos"
-              />
-            </div>
-          </div>
-          <div
-            class="Toolbar-outerContainer Toolbar-clear Toolbar-transparent"
-          >
-            <div
-              class="Toolbar-toolbar"
-            >
-              <span
-                class="spacer"
-                style="flex-grow: 1;"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div
-      class="ObjectPage-contentHeader"
+      style="display: grid;"
     />
-    <section
-      class="ObjectPage-anchorBar"
-      role="navigation"
-      style="top: 0px;"
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
     >
       <ui5-tabcontainer
         collapsed="true"
+        data-component-name="ObjectPageTabContainer"
         fixed="true"
         show-overflow="true"
         tab-layout="Standard"
         tabs-placement="Top"
         ui5-tabcontainer=""
       >
-        <ui5-tab
+        <ui5-object-page-anchor-tab
           data-index="0"
           data-section-id="1"
           selected="true"
-          semantic-color="Default"
           text=""
-          ui5-tab=""
+          ui5-object-page-anchor-tab=""
         />
       </ui5-tabcontainer>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-1"
-      role="region"
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
     >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-1"
+        role="region"
       >
         <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        />
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
         >
-          Test
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          />
         </div>
-      </div>
-    </section>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            Test
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </DocumentFragment>
 `;
 
-exports[`ObjectPage Only Sections 1`] = `
+exports[`ObjectPage with anchor-bar 1`] = `
 <DocumentFragment>
   <div
     class="ObjectPage-objectPage sapScrollBar"
@@ -965,41 +797,33 @@ exports[`ObjectPage Only Sections 1`] = `
   >
     <header
       aria-roledescription="Object Page header"
-      class="ObjectPage-header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="false"
       role="banner"
+      style="display: grid;"
     >
       <div
-        class="ObjectPage-titleBar"
+        class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap DynamicPageTitle-container"
+        data-component-name="DynamicPageTitle"
+        data-not-clickable="false"
       >
         <div
           class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
+          style="flex-grow: 1; width: 100%;"
         >
           <div
-            class="FlexBox-flexBox FlexBox-flexBoxDirectionColumn FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap ObjectPage-container"
+            class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap DynamicPageTitle-titleMainSection"
           >
             <div
-              class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsBaseline FlexBox-flexWrapNoWrap"
+              class="DynamicPageTitle-content"
+              style="padding-left: 0.5rem;"
             >
-              <ui5-title
-                class="ObjectPage-title"
-                level="H3"
-                ui5-title=""
-              >
-                Fiori Object Page Title
-              </ui5-title>
-              <ui5-label
-                class="ObjectPage-subTitle"
-                ui5-label=""
-              >
-                Sub Title
-              </ui5-label>
-              <div
-                class="ObjectPage-keyInfos"
-              />
+              HeaderTitle
             </div>
           </div>
           <div
-            class="Toolbar-outerContainer Toolbar-clear Toolbar-transparent"
+            class="Toolbar-outerContainer Toolbar-clear"
           >
             <div
               class="Toolbar-toolbar"
@@ -1008,670 +832,2539 @@ exports[`ObjectPage Only Sections 1`] = `
                 class="spacer"
                 style="flex-grow: 1;"
               />
-              <div>
-                <ui5-button
-                  design="Default"
-                  ui5-button=""
-                >
-                  Action
-                </ui5-button>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </header>
     <div
-      class="ObjectPage-contentHeader"
+      class="DynamicPageHeader-header"
+      data-component-name="DynamicPageHeader"
     >
-      <span
-        class="ObjectPage-headerCustomContent"
+      <div
+        class="ObjectPage-headerContainer StdExtPadding-Desktop"
+        data-component-name="ObjectPageHeaderContainer"
       >
         <div
-          style="display: flex; flex-direction: column;"
+          data-component-name="ObjectPageHeaderContent"
         >
-          <ui5-link
-            design="Default"
-            href="https://www.sap.com"
-            ui5-link=""
-          >
-            www.myurl.com
-          </ui5-link>
-          <span
-            class="Text-text"
-          >
-            Address 1
-          </span>
-          <span
-            class="Text-text"
-          >
-            Address 2
-          </span>
-          <span
-            class="Text-text"
-          >
-            Address 3
-          </span>
+          HeaderContent
         </div>
-      </span>
+      </div>
     </div>
-    <section
+    <div
       class="ObjectPage-anchorBar"
-      role="navigation"
-      style="top: 0px;"
+      data-component-name="ObjectPageAnchorBar"
+      style="top: 5px;"
+    >
+      <section
+        class="DynamicPageAnchorBar-anchorBarActionButton"
+        role="navigation"
+      >
+        <ui5-button
+          aria-label="Expand Header"
+          class="DynamicPageAnchorBar-anchorBarActionButton DynamicPageAnchorBar-anchorBarActionButtonExpandable "
+          data-ui5wcr-dynamic-page-header-action=""
+          design="Default"
+          icon="slim-arrow-down"
+          title="Expand Header"
+          ui5-button=""
+        />
+      </section>
+    </div>
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
     >
       <ui5-tabcontainer
         collapsed="true"
+        data-component-name="ObjectPageTabContainer"
         fixed="true"
         show-overflow="true"
         tab-layout="Standard"
         tabs-placement="Top"
         ui5-tabcontainer=""
       >
-        <ui5-tab
+        <ui5-object-page-anchor-tab
           data-index="0"
           data-section-id="1"
           selected="true"
-          semantic-color="Default"
-          text="Test 1"
-          ui5-tab=""
+          text="Title Section 1"
+          ui5-object-page-anchor-tab=""
         />
-        <ui5-tab
+        <ui5-object-page-anchor-tab
           data-index="1"
           data-section-id="2"
-          semantic-color="Default"
-          text="Test 2"
-          ui5-tab=""
+          text="Title Section 2"
+          ui5-object-page-anchor-tab=""
         />
-        <ui5-tab
+        <ui5-object-page-anchor-tab
           data-index="2"
           data-section-id="3"
-          semantic-color="Default"
-          text="Test 3"
-          ui5-tab=""
+          text="Title Section 3"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
         />
-      </ui5-tabcontainer>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-1"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
-      >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        >
-          Test 1
-        </div>
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          <ui5-label
-            ui5-label=""
-          >
-            My Content 1
-          </ui5-label>
-        </div>
-      </div>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-2"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
-      >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        >
-          Test 2
-        </div>
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          <ui5-label
-            ui5-label=""
-          >
-            My Content 2
-          </ui5-label>
-        </div>
-      </div>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-3"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
-      >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        >
-          Test 3
-        </div>
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          <ui5-label
-            ui5-label=""
-          >
-            My Content 3
-          </ui5-label>
-        </div>
-      </div>
-    </section>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`ObjectPage Set selected section id 1`] = `
-<DocumentFragment>
-  <div
-    class="ObjectPage-objectPage sapScrollBar ObjectPage-iconTabBarMode"
-    data-component-name="ObjectPage"
-  >
-    <header
-      aria-roledescription="Object Page header"
-      class="ObjectPage-header"
-      role="banner"
-    >
-      <div
-        class="ObjectPage-titleBar"
-      >
-        <div
-          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
-        >
-          <div
-            class="FlexBox-flexBox FlexBox-flexBoxDirectionColumn FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap ObjectPage-container"
-          >
-            <div
-              class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsBaseline FlexBox-flexWrapNoWrap"
-            >
-              <ui5-title
-                class="ObjectPage-title"
-                level="H3"
-                ui5-title=""
-              />
-              <ui5-label
-                class="ObjectPage-subTitle"
-                ui5-label=""
-              />
-              <div
-                class="ObjectPage-keyInfos"
-              />
-            </div>
-          </div>
-          <div
-            class="Toolbar-outerContainer Toolbar-clear Toolbar-transparent"
-          >
-            <div
-              class="Toolbar-toolbar"
-            >
-              <span
-                class="spacer"
-                style="flex-grow: 1;"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div
-      class="ObjectPage-contentHeader"
-    />
-    <section
-      class="ObjectPage-anchorBar"
-      role="navigation"
-      style="top: 0px;"
-    >
-      <ui5-tabcontainer
-        collapsed="true"
-        fixed="true"
-        show-overflow="true"
-        tab-layout="Standard"
-        tabs-placement="Top"
-        ui5-tabcontainer=""
-      >
-        <ui5-tab
-          data-index="0"
-          data-section-id="1"
-          semantic-color="Default"
-          text=""
-          ui5-tab=""
-        />
-        <ui5-tab
-          data-index="1"
-          data-section-id="2"
-          selected="true"
-          semantic-color="Default"
-          text=""
-          ui5-tab=""
-        />
-      </ui5-tabcontainer>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-2"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
-      >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        />
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          Test 2
-        </div>
-      </div>
-    </section>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`ObjectPage With Subsections 1`] = `
-<DocumentFragment>
-  <div
-    class="ObjectPage-objectPage sapScrollBar"
-    data-component-name="ObjectPage"
-  >
-    <header
-      aria-roledescription="Object Page header"
-      class="ObjectPage-header"
-      role="banner"
-    >
-      <div
-        class="ObjectPage-titleBar"
-      >
-        <div
-          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
-        >
-          <div
-            class="FlexBox-flexBox FlexBox-flexBoxDirectionColumn FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap ObjectPage-container"
-          >
-            <div
-              class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsBaseline FlexBox-flexWrapNoWrap"
-            >
-              <ui5-title
-                class="ObjectPage-title"
-                level="H3"
-                ui5-title=""
-              >
-                Fiori Object Page Title
-              </ui5-title>
-              <ui5-label
-                class="ObjectPage-subTitle"
-                ui5-label=""
-              >
-                Sub Title
-              </ui5-label>
-              <div
-                class="ObjectPage-keyInfos"
-              />
-            </div>
-          </div>
-          <div
-            class="Toolbar-outerContainer Toolbar-clear Toolbar-transparent"
-          >
-            <div
-              class="Toolbar-toolbar"
-            >
-              <span
-                class="spacer"
-                style="flex-grow: 1;"
-              />
-              <div>
-                <ui5-button
-                  design="Default"
-                  ui5-button=""
-                >
-                  Action
-                </ui5-button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div
-      class="ObjectPage-contentHeader"
-    >
-      <span
-        class="ObjectPage-headerCustomContent"
-      >
-        <div
-          style="display: flex; flex-direction: column;"
-        >
-          <ui5-link
-            design="Default"
-            href="https://www.sap.com"
-            ui5-link=""
-          >
-            www.myurl.com
-          </ui5-link>
-          <span
-            class="Text-text"
-          >
-            Address 1
-          </span>
-          <span
-            class="Text-text"
-          >
-            Address 2
-          </span>
-          <span
-            class="Text-text"
-          >
-            Address 3
-          </span>
-        </div>
-      </span>
-    </div>
-    <section
-      class="ObjectPage-anchorBar"
-      role="navigation"
-      style="top: 0px;"
-    >
-      <ui5-tabcontainer
-        collapsed="true"
-        fixed="true"
-        show-overflow="true"
-        tab-layout="Standard"
-        tabs-placement="Top"
-        ui5-tabcontainer=""
-      >
-        <ui5-tab
-          data-index="0"
-          data-section-id="1"
-          selected="true"
-          semantic-color="Default"
-          text="Test 1"
-          ui5-tab=""
-        />
-        <ui5-tab
-          data-index="1"
-          data-section-id="2"
-          semantic-color="Default"
-          text="Test 2"
-          ui5-tab=""
-        />
-        <ui5-tab
-          data-index="2"
-          data-section-id="3"
-          semantic-color="Default"
-          text="Test 3"
-          ui5-tab=""
-        />
-        <ui5-tab
+        <ui5-object-page-anchor-tab
           data-index="3"
           data-section-id="4"
-          semantic-color="Default"
-          text="Test 4"
-          ui5-tab=""
-        />
-        <ui5-tab
-          data-index="4"
-          data-section-id="5"
-          semantic-color="Default"
-          text="Test 5"
-          ui5-tab=""
+          text="Title Section 4"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
         />
       </ui5-tabcontainer>
-      <ui5-button
-        aria-label="Expand Header"
-        class="ObjectPageAnchorBar-anchorBarActionButton ObjectPageAnchorBar-anchorBarActionButtonExpandable "
-        data-ui5wcr-object-page-header-action=""
-        design="Default"
-        icon="slim-arrow-down"
-        title="Expand Header"
-        ui5-button=""
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
+    >
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-1"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 1
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <ui5-label
+              ui5-label=""
+            >
+              Content Section 1
+            </ui5-label>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-2"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 2
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div>
+              Content Section 2
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-3"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 3
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-4"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 4
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      data-component-name="ObjectPageFooterSpacer"
+      style="height: 1rem;"
+    />
+    <footer
+      class="ObjectPage-footer"
+      data-component-name="ObjectPageFooter"
+    >
+      <ui5-bar
+        design="FloatingFooter"
+        ui5-bar=""
+      >
+        <div
+          slot="endContent"
+        >
+          Footer
+        </div>
+      </ui5-bar>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectPage with footer 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectPage-objectPage sapScrollBar"
+    data-component-name="ObjectPage"
+  >
+    <header
+      aria-roledescription="Object Page header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
+      role="banner"
+      style="display: grid;"
+    />
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
+    >
+      <ui5-tabcontainer
+        collapsed="true"
+        data-component-name="ObjectPageTabContainer"
+        fixed="true"
+        show-overflow="true"
+        tab-layout="Standard"
+        tabs-placement="Top"
+        ui5-tabcontainer=""
+      >
+        <ui5-object-page-anchor-tab
+          data-index="0"
+          data-section-id="1"
+          selected="true"
+          text="Title Section 1"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="1"
+          data-section-id="2"
+          text="Title Section 2"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="2"
+          data-section-id="3"
+          text="Title Section 3"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+        <ui5-object-page-anchor-tab
+          data-index="3"
+          data-section-id="4"
+          text="Title Section 4"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+      </ui5-tabcontainer>
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
+    >
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-1"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 1
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <ui5-label
+              ui5-label=""
+            >
+              Content Section 1
+            </ui5-label>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-2"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 2
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div>
+              Content Section 2
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-3"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 3
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-4"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 4
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      data-component-name="ObjectPageFooterSpacer"
+      style="height: 1rem;"
+    />
+    <footer
+      class="ObjectPage-footer"
+      data-component-name="ObjectPageFooter"
+    >
+      <ui5-bar
+        design="FloatingFooter"
+        ui5-bar=""
+      >
+        <div
+          slot="endContent"
+        >
+          Footer
+        </div>
+      </ui5-bar>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectPage with header 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectPage-objectPage sapScrollBar"
+    data-component-name="ObjectPage"
+  >
+    <header
+      aria-roledescription="Object Page header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
+      role="banner"
+      style="display: grid;"
+    />
+    <div
+      class="DynamicPageHeader-header"
+      data-component-name="DynamicPageHeader"
+    >
+      <div
+        class="ObjectPage-headerContainer StdExtPadding-Desktop"
+        data-component-name="ObjectPageHeaderContainer"
+      >
+        <div
+          data-component-name="ObjectPageHeaderContent"
+        >
+          HeaderContent
+        </div>
+      </div>
+    </div>
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
+    >
+      <ui5-tabcontainer
+        collapsed="true"
+        data-component-name="ObjectPageTabContainer"
+        fixed="true"
+        show-overflow="true"
+        tab-layout="Standard"
+        tabs-placement="Top"
+        ui5-tabcontainer=""
+      >
+        <ui5-object-page-anchor-tab
+          data-index="0"
+          data-section-id="1"
+          selected="true"
+          text="Title Section 1"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="1"
+          data-section-id="2"
+          text="Title Section 2"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="2"
+          data-section-id="3"
+          text="Title Section 3"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+        <ui5-object-page-anchor-tab
+          data-index="3"
+          data-section-id="4"
+          text="Title Section 4"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+      </ui5-tabcontainer>
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
+    >
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-1"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 1
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <ui5-label
+              ui5-label=""
+            >
+              Content Section 1
+            </ui5-label>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-2"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 2
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div>
+              Content Section 2
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-3"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 3
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-4"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 4
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectPage with img 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectPage-objectPage sapScrollBar"
+    data-component-name="ObjectPage"
+  >
+    <header
+      aria-roledescription="Object Page header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
+      role="banner"
+      style="display: grid;"
+    >
+      <div
+        class="CollapsedAvatar-base CollapsedAvatar-visible"
+        style="padding-right: 1rem;"
+      >
+        <span
+          class="CollapsedAvatar-imageContainer"
+          style="border-radius: 50%; overflow: hidden;"
+        >
+          <img
+            alt="Object Page Image"
+            class="CollapsedAvatar-image"
+            src="not_a_real_path.orly"
+          />
+        </span>
+      </div>
+      <div
+        class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap DynamicPageTitle-container"
+        data-component-name="DynamicPageTitle"
+        data-not-clickable="true"
+      >
+        <div
+          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
+          style="flex-grow: 1; width: 100%;"
+        >
+          <div
+            class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap DynamicPageTitle-titleMainSection"
+          >
+            <div
+              class="DynamicPageTitle-content"
+              style="padding-left: 0.5rem;"
+            >
+              HeaderTitle
+            </div>
+          </div>
+          <div
+            class="Toolbar-outerContainer Toolbar-clear"
+          >
+            <div
+              class="Toolbar-toolbar"
+            >
+              <span
+                class="spacer"
+                style="flex-grow: 1;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="DynamicPageHeader-header"
+      data-component-name="DynamicPageHeader"
+    >
+      <div
+        class="ObjectPage-headerContainer StdExtPadding-Desktop"
+        data-component-name="ObjectPageHeaderContainer"
+      >
+        <span
+          class="ObjectPage-headerImage"
+          style="border-radius: 50%; overflow: hidden;"
+        >
+          <img
+            alt="Company Logo"
+            class="ObjectPage-image"
+            src="not_a_real_path.orly"
+          />
+        </span>
+        <div
+          data-component-name="ObjectPageHeaderContent"
+        >
+          HeaderContent
+        </div>
+      </div>
+    </div>
+    <div
+      class="ObjectPage-anchorBar"
+      data-component-name="ObjectPageAnchorBar"
+      style="top: 5px;"
+    >
+      <section
+        role="navigation"
       />
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-1"
-      role="region"
+    </div>
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
     >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
+      <ui5-tabcontainer
+        collapsed="true"
+        data-component-name="ObjectPageTabContainer"
+        fixed="true"
+        show-overflow="true"
+        tab-layout="Standard"
+        tabs-placement="Top"
+        ui5-tabcontainer=""
       >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        >
-          Test 1
-        </div>
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          <ui5-label
-            ui5-label=""
-          >
-            My Content 1
-          </ui5-label>
-        </div>
-      </div>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-2"
-      role="region"
+        <ui5-object-page-anchor-tab
+          data-index="0"
+          data-section-id="1"
+          selected="true"
+          text="Title Section 1"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="1"
+          data-section-id="2"
+          text="Title Section 2"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="2"
+          data-section-id="3"
+          text="Title Section 3"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+        <ui5-object-page-anchor-tab
+          data-index="3"
+          data-section-id="4"
+          text="Title Section 4"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+      </ui5-tabcontainer>
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
     >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-1"
+        role="region"
       >
         <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        >
-          Test 2
-        </div>
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
         >
           <div
-            style="height: 800px;"
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
           >
-            Test2
+            Title Section 1
           </div>
         </div>
-      </div>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-3"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
-      >
         <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
+          class="ObjectPageSection-sectionContent"
         >
-          Test 3
-        </div>
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          Test1
-        </div>
-      </div>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-4"
-      role="region"
-    >
-      <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
-      >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        >
-          Test 4
-        </div>
-      </div>
-      <div
-        class="ObjectPageSection-sectionContent"
-      >
-        <div
-          class="ObjectPageSection-sectionContentInner"
-        >
-          <h1>
-            Section 4
-          </h1>
           <div
-            class="ObjectPageSubSection-objectPageSubSection"
-            data-component-name="ObjectPageSubSection"
-            id="ObjectPageSubSection-4.1"
-            role="region"
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
           >
-            <div
-              aria-level="4"
-              class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
-              role="heading"
+            <ui5-label
+              ui5-label=""
             >
-              SubSection 4.1
-            </div>
-            <div
-              class="ObjectPageSubSection-subSectionContent"
-            >
-              Test 4 SubSection 1
-            </div>
+              Content Section 1
+            </ui5-label>
           </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-2"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
           <div
-            class="ObjectPageSubSection-objectPageSubSection"
-            data-component-name="ObjectPageSubSection"
-            id="ObjectPageSubSection-4.2"
-            role="region"
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
           >
-            <div
-              aria-level="4"
-              class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
-              role="heading"
-            >
-              SubSection 4.2
-            </div>
-            <div
-              class="ObjectPageSubSection-subSectionContent"
-            >
-              Test 4 SubSection 2
+            Title Section 2
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div>
+              Content Section 2
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section
-      data-component-name="ObjectPageSection"
-      id="ObjectPageSection-5"
-      role="region"
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-3"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 3
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-4"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 4
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      data-component-name="ObjectPageFooterSpacer"
+      style="height: 1rem;"
+    />
+    <footer
+      class="ObjectPage-footer"
+      data-component-name="ObjectPageFooter"
+    >
+      <ui5-bar
+        design="FloatingFooter"
+        ui5-bar=""
+      >
+        <div
+          slot="endContent"
+        >
+          Footer
+        </div>
+      </ui5-bar>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectPage with img 2`] = `
+<DocumentFragment>
+  <div
+    class="ObjectPage-objectPage sapScrollBar"
+    data-component-name="ObjectPage"
+  >
+    <header
+      aria-roledescription="Object Page header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
+      role="banner"
+      style="display: grid;"
     >
       <div
-        aria-level="3"
-        class="ObjectPageSection-header"
-        role="heading"
+        class="CollapsedAvatar-base CollapsedAvatar-visible"
+        style="padding-right: 1rem;"
       >
-        <div
-          class="ObjectPageSection-title ObjectPageSection-uppercase"
-        >
-          Test 5
-        </div>
+        <ui5-avatar
+          class="CollapsedAvatar-imageContainer"
+          image-fit-type="Cover"
+          shape="Circle"
+          size="S"
+          ui5-avatar=""
+        />
       </div>
       <div
-        class="ObjectPageSection-sectionContent"
+        class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap DynamicPageTitle-container"
+        data-component-name="DynamicPageTitle"
+        data-not-clickable="true"
       >
         <div
-          class="ObjectPageSection-sectionContentInner"
+          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
+          style="flex-grow: 1; width: 100%;"
         >
           <div
-            class="ObjectPageSubSection-objectPageSubSection"
-            data-component-name="ObjectPageSubSection"
-            id="ObjectPageSubSection-5.1"
-            role="region"
+            class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap DynamicPageTitle-titleMainSection"
           >
             <div
-              aria-level="4"
-              class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
-              role="heading"
+              class="DynamicPageTitle-content"
+              style="padding-left: 0.5rem;"
             >
-              SubSection 5.1
-            </div>
-            <div
-              class="ObjectPageSubSection-subSectionContent"
-            >
-              Content of SubSection 5.1
+              HeaderTitle
             </div>
           </div>
           <div
-            class="ObjectPageSubSection-objectPageSubSection"
-            data-component-name="ObjectPageSubSection"
-            id="ObjectPageSubSection-5.2"
-            role="region"
+            class="Toolbar-outerContainer Toolbar-clear"
           >
             <div
-              aria-level="4"
-              class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
-              role="heading"
+              class="Toolbar-toolbar"
             >
-              SubSection 5.2
-            </div>
-            <div
-              class="ObjectPageSubSection-subSectionContent"
-            >
-              Content of SubSection 5.2
+              <span
+                class="spacer"
+                style="flex-grow: 1;"
+              />
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </header>
+    <div
+      class="DynamicPageHeader-header"
+      data-component-name="DynamicPageHeader"
+    >
+      <div
+        class="ObjectPage-headerContainer StdExtPadding-Desktop"
+        data-component-name="ObjectPageHeaderContainer"
+      >
+        <ui5-avatar
+          class="ObjectPage-headerImage"
+          image-fit-type="Cover"
+          shape="Circle"
+          size="L"
+          ui5-avatar=""
+        />
+        <div
+          data-component-name="ObjectPageHeaderContent"
+        >
+          HeaderContent
+        </div>
+      </div>
+    </div>
+    <div
+      class="ObjectPage-anchorBar"
+      data-component-name="ObjectPageAnchorBar"
+      style="top: 5px;"
+    >
+      <section
+        role="navigation"
+      />
+    </div>
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
+    >
+      <ui5-tabcontainer
+        collapsed="true"
+        data-component-name="ObjectPageTabContainer"
+        fixed="true"
+        show-overflow="true"
+        tab-layout="Standard"
+        tabs-placement="Top"
+        ui5-tabcontainer=""
+      >
+        <ui5-object-page-anchor-tab
+          data-index="0"
+          data-section-id="1"
+          selected="true"
+          text="Title Section 1"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="1"
+          data-section-id="2"
+          text="Title Section 2"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="2"
+          data-section-id="3"
+          text="Title Section 3"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+        <ui5-object-page-anchor-tab
+          data-index="3"
+          data-section-id="4"
+          text="Title Section 4"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+      </ui5-tabcontainer>
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
+    >
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-1"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 1
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <ui5-label
+              ui5-label=""
+            >
+              Content Section 1
+            </ui5-label>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-2"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 2
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div>
+              Content Section 2
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-3"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 3
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-4"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 4
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      data-component-name="ObjectPageFooterSpacer"
+      style="height: 1rem;"
+    />
+    <footer
+      class="ObjectPage-footer"
+      data-component-name="ObjectPageFooter"
+    >
+      <ui5-bar
+        design="FloatingFooter"
+        ui5-bar=""
+      >
+        <div
+          slot="endContent"
+        >
+          Footer
+        </div>
+      </ui5-bar>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectPage with title 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectPage-objectPage sapScrollBar"
+    data-component-name="ObjectPage"
+  >
+    <header
+      aria-roledescription="Object Page header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
+      role="banner"
+      style="display: grid;"
+    >
+      <div
+        class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap DynamicPageTitle-container"
+        data-component-name="DynamicPageTitle"
+        data-not-clickable="true"
+      >
+        <div
+          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
+          style="flex-grow: 1; width: 100%;"
+        >
+          <div
+            class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap DynamicPageTitle-titleMainSection"
+          >
+            <div
+              class="DynamicPageTitle-content"
+              style="padding-left: 0.5rem;"
+            >
+              HeaderTitle
+            </div>
+          </div>
+          <div
+            class="Toolbar-outerContainer Toolbar-clear"
+          >
+            <div
+              class="Toolbar-toolbar"
+            >
+              <span
+                class="spacer"
+                style="flex-grow: 1;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
+    >
+      <ui5-tabcontainer
+        collapsed="true"
+        data-component-name="ObjectPageTabContainer"
+        fixed="true"
+        show-overflow="true"
+        tab-layout="Standard"
+        tabs-placement="Top"
+        ui5-tabcontainer=""
+      >
+        <ui5-object-page-anchor-tab
+          data-index="0"
+          data-section-id="1"
+          selected="true"
+          text="Title Section 1"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="1"
+          data-section-id="2"
+          text="Title Section 2"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="2"
+          data-section-id="3"
+          text="Title Section 3"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+        <ui5-object-page-anchor-tab
+          data-index="3"
+          data-section-id="4"
+          text="Title Section 4"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+      </ui5-tabcontainer>
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
+    >
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-1"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 1
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <ui5-label
+              ui5-label=""
+            >
+              Content Section 1
+            </ui5-label>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-2"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 2
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div>
+              Content Section 2
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-3"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 3
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-4"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 4
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectPage with title, header & footer 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectPage-objectPage sapScrollBar"
+    data-component-name="ObjectPage"
+  >
+    <header
+      aria-roledescription="Object Page header"
+      class="ObjectPage-header StdExtPadding-Desktop"
+      data-component-name="ObjectPageTopHeader"
+      data-not-clickable="true"
+      role="banner"
+      style="display: grid;"
+    >
+      <div
+        class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap DynamicPageTitle-container"
+        data-component-name="DynamicPageTitle"
+        data-not-clickable="true"
+      >
+        <div
+          class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsCenter FlexBox-flexWrapNoWrap"
+          style="flex-grow: 1; width: 100%;"
+        >
+          <div
+            class="FlexBox-flexBox FlexBox-flexBoxDirectionRow FlexBox-justifyContentStart FlexBox-alignItemsStretch FlexBox-flexWrapNoWrap DynamicPageTitle-titleMainSection"
+          >
+            <div
+              class="DynamicPageTitle-content"
+              style="padding-left: 0.5rem;"
+            >
+              HeaderTitle
+            </div>
+          </div>
+          <div
+            class="Toolbar-outerContainer Toolbar-clear"
+          >
+            <div
+              class="Toolbar-toolbar"
+            >
+              <span
+                class="spacer"
+                style="flex-grow: 1;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="DynamicPageHeader-header"
+      data-component-name="DynamicPageHeader"
+    >
+      <div
+        class="ObjectPage-headerContainer StdExtPadding-Desktop"
+        data-component-name="ObjectPageHeaderContainer"
+      >
+        <div
+          data-component-name="ObjectPageHeaderContent"
+        >
+          HeaderContent
+        </div>
+      </div>
+    </div>
+    <div
+      class="ObjectPage-anchorBar"
+      data-component-name="ObjectPageAnchorBar"
+      style="top: 5px;"
+    >
+      <section
+        role="navigation"
+      />
+    </div>
+    <div
+      data-component-name="ObjectPageTabContainer"
+      style="position: sticky; top: 0px;"
+    >
+      <ui5-tabcontainer
+        collapsed="true"
+        data-component-name="ObjectPageTabContainer"
+        fixed="true"
+        show-overflow="true"
+        tab-layout="Standard"
+        tabs-placement="Top"
+        ui5-tabcontainer=""
+      >
+        <ui5-object-page-anchor-tab
+          data-index="0"
+          data-section-id="1"
+          selected="true"
+          text="Title Section 1"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="1"
+          data-section-id="2"
+          text="Title Section 2"
+          ui5-object-page-anchor-tab=""
+        />
+        <ui5-object-page-anchor-tab
+          data-index="2"
+          data-section-id="3"
+          text="Title Section 3"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+        <ui5-object-page-anchor-tab
+          data-index="3"
+          data-section-id="4"
+          text="Title Section 4"
+          ui5-object-page-anchor-tab=""
+          with-sub-sections="true"
+        />
+      </ui5-tabcontainer>
+    </div>
+    <div
+      class="StdExtPadding-Desktop"
+      data-component-name="ObjectPageContent"
+    >
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-1"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 1
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <ui5-label
+              ui5-label=""
+            >
+              Content Section 1
+            </ui5-label>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-2"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 2
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div>
+              Content Section 2
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-3"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 3
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-3.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 3.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 3.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-component-name="ObjectPageSection"
+        id="ObjectPageSection-4"
+        role="region"
+      >
+        <div
+          aria-level="3"
+          class="ObjectPageSection-header"
+          data-component-name="ObjectPageSectionHeading"
+          role="heading"
+        >
+          <div
+            class="ObjectPageSection-title ObjectPageSection-uppercase"
+          >
+            Title Section 4
+          </div>
+        </div>
+        <div
+          class="ObjectPageSection-sectionContent"
+        >
+          <div
+            class="ObjectPageSection-sectionContentInner"
+            data-component-name="ObjectPageSectionContent"
+          >
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.1"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.1
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.1
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.2"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.2
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.2
+              </div>
+            </div>
+            <div
+              class="ObjectPageSubSection-objectPageSubSection"
+              id="ObjectPageSubSection-4.3"
+              role="region"
+              tabindex="-1"
+            >
+              <div
+                aria-level="4"
+                class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+                data-component-name="ObjectPageSubSectionHeading"
+                role="heading"
+              >
+                Title SubSection 4.3
+              </div>
+              <div
+                class="ObjectPageSubSection-subSectionContent"
+                data-component-name="ObjectPageSubSectionContent"
+              >
+                Content Section 4.3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      data-component-name="ObjectPageFooterSpacer"
+      style="height: 1rem;"
+    />
+    <footer
+      class="ObjectPage-footer"
+      data-component-name="ObjectPageFooter"
+    >
+      <ui5-bar
+        design="FloatingFooter"
+        ui5-bar=""
+      >
+        <div
+          slot="endContent"
+        >
+          Footer
+        </div>
+      </ui5-bar>
+    </footer>
   </div>
 </DocumentFragment>
 `;

@@ -1,16 +1,17 @@
-import { sapUiResponsiveContentPadding } from '@ui5/webcomponents-react-base/dist/spacing';
 import { ThemingParameters } from '@ui5/webcomponents-react-base/dist/ThemingParameters';
+import { DynamicPageCssVariables } from '../DynamicPage/DynamicPage.jss';
 
 export const ObjectPageCssVariables = {
   anchorFloat: '--_ui5wcr_ObjectPage_actions_float',
   anchorLeft: '--_ui5wcr_ObjectPage_actions_left',
   anchorRight: '--_ui5wcr_ObjectPage_actions_right',
-  avatarMargin: '--_ui5wcr_ObjectPage_avatar_margin',
   lastSectionMargin: '--_ui5wcr_ObjectPage_last_section_margin_bottom'
 };
 
 export const styles = {
   objectPage: {
+    [DynamicPageCssVariables.headerDisplay]: 'block',
+    boxSizing: 'border-box',
     width: '100%',
     height: '100%',
     maxHeight: '100vh',
@@ -29,160 +30,98 @@ export const styles = {
     '& section[id*="ObjectPageSection-"] ~ section[id*="ObjectPageSection-"] > div[role="heading"]': {
       display: 'block'
     },
-    '& section[data-component-name="ObjectPageSection"]:last-child': {
+    '& section[data-component-name="ObjectPageSection"]:last-of-type': {
       marginBottom: `var(${ObjectPageCssVariables.lastSectionMargin})`
     }
   },
   '@global html': {
     [ObjectPageCssVariables.anchorFloat]: 'right',
     [ObjectPageCssVariables.anchorRight]: '1.25rem',
-    [ObjectPageCssVariables.anchorLeft]: 'unset',
-    [ObjectPageCssVariables.avatarMargin]: '0 1rem 0 0'
+    [ObjectPageCssVariables.anchorLeft]: 'unset'
   },
   '@global [dir="rtl"]': {
     [ObjectPageCssVariables.anchorFloat]: 'left',
     [ObjectPageCssVariables.anchorRight]: 'unset',
-    [ObjectPageCssVariables.anchorLeft]: '1.25rem',
-    [ObjectPageCssVariables.avatarMargin]: '0 0 0 1rem'
+    [ObjectPageCssVariables.anchorLeft]: '1.25rem'
   },
   iconTabBarMode: {
     '& section[data-component-name="ObjectPageSection"] > div[role="heading"]': {
       display: 'none'
     }
   },
-  noHeader: {
-    '& $header': {
-      display: 'none'
-    },
-    '& $contentHeader': {
-      display: 'none'
-    }
-  },
   headerCollapsed: {
-    '& $contentHeader': {
-      display: 'none'
+    [DynamicPageCssVariables.headerDisplay]: 'none'
+  },
+  headerContainer: {
+    marginBottom: '0.25rem',
+    backgroundColor: ThemingParameters.sapObjectHeader_Background,
+    display: 'grid',
+    gridAutoColumns: 'auto 1fr',
+    '& [data-component-name="ObjectPageHeaderContent"]': {
+      gridColumn: 2,
+      width: '100%',
+      height: '100%'
     }
   },
-  // header
+  headerHoverStyles: {
+    backgroundColor: `${ThemingParameters.sapTile_Active_Background} !important`,
+    '& [data-component-name="DynamicPageTitle"]': {
+      backgroundColor: ThemingParameters.sapTile_Active_Background
+    }
+  },
   header: {
-    ...sapUiResponsiveContentPadding,
-    flexShrink: 0,
+    [DynamicPageCssVariables.headerDisplay]: 'block',
+    boxSizing: 'border-box',
     backgroundColor: ThemingParameters.sapObjectHeader_Background,
     position: 'sticky',
     top: 0,
-    zIndex: 2
+    zIndex: 2,
+    gridAutoColumns: 'auto 1fr',
+    '& [data-component-name="DynamicPageTitle"]': {
+      gridColumn: 2,
+      width: '100%',
+      paddingLeft: 0,
+      paddingRight: 0
+    },
+    '&:hover': {
+      // TODO background color should be sapObjectHeader_Hover_Background (same color as sapTile_Active_Background)
+      backgroundColor: ThemingParameters.sapTile_Active_Background
+    },
+    cursor: 'pointer',
+    '&[data-not-clickable="true"]': {
+      pointerEvents: 'none',
+      cursor: 'unset',
+      '&:hover': {
+        backgroundColor: ThemingParameters.sapObjectHeader_Background
+      }
+    }
   },
   iEClass: {
     position: 'fixed',
     width: 'calc(100% - 18px)'
   },
-  iEClassHeader: {
-    width: 'calc(100% - 18px - 2rem)'
-  },
-  iEBackgroundElement: {
-    position: 'fixed',
-    backgroundColor: ThemingParameters.sapObjectHeader_Background
-  },
-  contentHeader: {
-    ...sapUiResponsiveContentPadding,
-    backgroundColor: ThemingParameters.sapObjectHeader_Background,
-    position: 'sticky',
-    paddingBottom: '0.25rem',
-    maxHeight: '500px',
-    overflow: 'hidden'
-  },
-  anchorBar: {
-    position: 'sticky',
-    zIndex: 2,
-    '--_ui5_tc_header_box_shadow': 'inset 0px -1px 0 0px rgba(0,0,0,0.15)'
-  },
-  titleBar: {
-    display: 'block',
-    position: 'relative'
-  },
-  container: {
-    flex: '1 1 70%',
-    boxSizing: 'border-box'
-  },
-  title: {
-    padding: '0.3125rem 0 0 0'
-  },
-  subTitle: {
-    verticalAlign: 'baseline',
-    padding: '0 0 0.5rem 0.5rem'
-  },
-  actions: {
-    position: 'absolute',
-    top: '0',
-    paddingTop: '0.75rem',
-    zIndex: 1,
-    right: `var(${ObjectPageCssVariables.anchorRight})`,
-    left: `var(${ObjectPageCssVariables.anchorLeft})`,
-    display: 'inline-block',
-    float: `var(${ObjectPageCssVariables.anchorFloat})`,
-    verticalAlign: 'top',
-    '& > *': {
-      marginLeft: '0.5rem',
-      padding: 0
-    }
-  },
-  titleInHeaderContent: {
-    '& $subTitle': {
-      padding: '0.5rem 0'
-    },
-    '& $keyInfos': {
-      alignSelf: 'unset'
-    },
-    '& contentHeader': {
-      paddingTop: 0,
-      '& > *': {
-        display: 'flex',
-        verticalAlign: 'top',
-        '&:not(:first-child)': {
-          marginRight: '2rem',
-          marginBottom: '1rem'
-        }
-      }
-    }
-  },
-  headerCustomContent: {
-    display: 'inline-block',
-    verticalAlign: 'top',
-    '& > *': {
-      float: 'left',
-      marginRight: '2rem',
-      marginBottom: '1rem',
-      lineHeight: '1.5rem'
-    },
-    '&:after': {
-      clear: 'both'
-    }
-  },
-  headerCustomContentItem: {
-    marginLeft: '1rem'
-  },
-
   headerImage: {
     minWidth: '5rem',
     maxWidth: '5rem',
     maxHeight: '5rem',
     display: 'inline-block',
-    marginRight: '2rem',
-    marginBottom: '1rem'
+    marginRight: '2rem'
+  },
+  headerImageRtl: {
+    marginRight: 0,
+    marginLeft: '2rem'
   },
   image: {
     width: '100%',
     height: '100%'
   },
-  keyInfos: {
-    '& > *': {
-      marginLeft: '1rem'
-    },
-    display: 'flex',
-    flexDirection: 'row',
-    alignSelf: 'center'
+  anchorBar: {
+    position: 'sticky',
+    zIndex: 2
   },
-  avatar: {
-    margin: `var(${ObjectPageCssVariables.avatarMargin})`
+  footer: {
+    position: 'sticky',
+    bottom: '0.5rem',
+    margin: '0 0.5rem'
   }
 };

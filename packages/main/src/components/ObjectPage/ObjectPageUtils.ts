@@ -11,10 +11,16 @@ export const extractSectionIdFromHtmlId = (id: string) => {
   return id.replace(/^ObjectPageSection-/, '');
 };
 
-export const getLastObjectPageSection = (ref: RefObject<HTMLDivElement>): HTMLElement => {
+export const getLastObjectPageSection = (ref: RefObject<HTMLDivElement>, alwaysSetMargin): HTMLElement => {
   const sections = ref.current?.querySelectorAll<HTMLElement>('[id^="ObjectPageSection"]');
+
   if (!sections || sections.length < 1) {
     return null;
+  }
+  if (!alwaysSetMargin && sections.length === 1) {
+    if (sections[0].querySelectorAll('[id^="ObjectPageSubSection"]').length === 0) {
+      return null;
+    }
   }
 
   return sections[sections.length - 1];

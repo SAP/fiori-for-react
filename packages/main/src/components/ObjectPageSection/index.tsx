@@ -49,7 +49,6 @@ const ObjectPageSection: FC<ObjectPageSectionPropTypes> = forwardRef(
     }
 
     const passThroughProps = usePassThroughHtmlProps(props, ['id']);
-
     return (
       <section
         ref={sectionRef}
@@ -61,12 +60,14 @@ const ObjectPageSection: FC<ObjectPageSectionPropTypes> = forwardRef(
         id={htmlId}
         data-component-name="ObjectPageSection"
       >
-        <div role="heading" aria-level={3} className={classes.header}>
-          <div className={titleClasses.valueOf()}>{title}</div>
+        <div role="heading" aria-level={3} className={classes.header} data-component-name="ObjectPageSectionHeading">
+          <div className={titleClasses.className}>{title}</div>
         </div>
         {/* TODO Check for subsections as they should win over the children */}
         <div className={classes.sectionContent}>
-          <div className={classes.sectionContentInner}>{children}</div>
+          <div className={classes.sectionContentInner} data-component-name="ObjectPageSectionContent">
+            {children}
+          </div>
         </div>
       </section>
     );
@@ -75,8 +76,6 @@ const ObjectPageSection: FC<ObjectPageSectionPropTypes> = forwardRef(
 
 ObjectPageSection.defaultProps = {
   title: '',
-  // @ts-ignore
-  isSection: true,
   titleUppercase: true
 };
 

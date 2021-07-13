@@ -15,6 +15,7 @@ or the [changelog](https://github.com/SAP/ui5-webcomponents-react/blob/master/CH
 
 ## Table of Contents
 
+- [0.16.x to 0.17.0](#migrating-from-016x-to-0170)
 - [0.15.x to 0.16.0](#migrating-from-015x-to-0160)
 - [0.14.x to 0.15.0](#migrating-from-014x-to-0150)
 - [0.13.x to 0.14.0](#migrating-from-013x-to-0140)
@@ -23,6 +24,96 @@ or the [changelog](https://github.com/SAP/ui5-webcomponents-react/blob/master/CH
 - [0.10.x to 0.11.0](#migrating-from-010x-to-0110)
 - [0.9.x to 0.10.0](#migrating-from-09x-to-0100)
 - [0.8.x to 0.9.0](#migrating-from-08x-to-090)
+
+## Migrating from 0.16.x to 0.17.0
+
+### Consolidate API of ObjectPage and DynamicPage
+
+The DynamicPage and the ObjectPage are very similar but had completely different APIs and props.
+We streamlined those APIs by adding components used by the `DynamicPage` to the `ObjectPage`.
+
+#### DynamicPage changes
+
+- `title` has been renamed to `headerTitle`.
+- **`DynamicPageTitle`:** `subHeading` has been renamed to `subheading`.
+- **`DynamicPageHeader`:** `children` are no longer displayed as `flex` items to support other display types like `grid`. To align children you now need to add the container (like `FlexBox`) and CSS yourself.
+  <br />
+  <br />
+  Example for aligning items next to each other:
+
+```jsx
+// Before
+<DynamicPageHeader>
+  <div>Content 1</div>
+  <div>Content 2</div>
+</DynamicPageHeader>
+
+// Now
+<DynamicPageHeader>
+  <FlexBox>
+    <div>Content 1</div>
+    <div>Content 2</div>
+  </FlexBox>
+</DynamicPageHeader>
+```
+
+#### ObjectPage changes
+
+- `title` has been renamed to `headerTitle` and is now defining the upper, static, title section of the `ObjectPage`. It expects to receive the `DynamicPageTitle` component.
+- `headerContent` has been renamed to `header` and expects now the `DynamicPageHeader` component to be passed.
+- `noHeader` has been removed. It is now sufficient not to set `headerTitle` and `header` to achieve the same behavior.
+- `title`, `subTitle`, `headerActions`, `breadcrumbs` and `keyInfos` should now be passed to the corresponding `DynamicPageTitle` props.
+
+Setting the title section of the `ObjectPage`:
+
+```jsx
+//Before
+<ObjectPage
+  title="Heading"
+  subTitle="Subheading"
+  breadcrumbs={
+    <Breadcrumbs currentLocationText="current Breadcrumb">
+      <Link>Breadcrumb 1</Link>
+      <Link>Breadcrumb 2</Link>
+    </Breadcrumbs>
+  }
+  headerActions={
+    <>
+      <Button>Action 1</Button>
+      <Button>Action 2</Button>
+    </>
+  }
+  keyInfos={<ObjectStatus>keyInfo</ObjectStatus>}
+>
+  ObjectPage Content
+</ObjectPage>
+
+//Now
+<ObjectPage
+  headerTitle={
+    <DynamicPageTitle
+      heading="Heading" // replaces `title`
+      subheading="Subheading" // replaces `subTitle`
+      breadcrumbs={
+        <Breadcrumbs currentLocationText="current Breadcrumb">
+          <Link>Breadcrumb 1</Link>
+          <Link>Breadcrumb 2</Link>
+        </Breadcrumbs>
+      }
+      actions={ /* replaces `headerActions`*/
+        <>
+          <Button>Action 1</Button>
+          <Button>Action 2</Button>
+        </>
+      }
+    >
+      <ObjectStatus>keyInfo</ObjectStatus>  {/* replaces `keyInfos` */}
+    </DynamicPageTitle>
+  }
+>
+  ObjectPage Content
+</ObjectPage>
+```
 
 ## Migrating from 0.15.x to 0.16.0
 

@@ -5,18 +5,23 @@ import { ObjectPageSubSection } from '@ui5/webcomponents-react/dist/ObjectPageSu
 import { ObjectPageMode } from '@ui5/webcomponents-react/dist/ObjectPageMode';
 import { Text } from '@ui5/webcomponents-react/dist/Text';
 import { Link } from '@ui5/webcomponents-react/dist/Link';
-import { ProgressIndicator } from '@ui5/webcomponents-react/dist/ProgressIndicator';
 import { Breadcrumbs } from '@ui5/webcomponents-react/dist/Breadcrumbs';
 import { Button } from '@ui5/webcomponents-react/dist/Button';
+import { Bar } from '@ui5/webcomponents-react/dist/Bar';
+import { BarDesign } from '@ui5/webcomponents-react/dist/BarDesign';
 import { ButtonDesign } from '@ui5/webcomponents-react/dist/ButtonDesign';
 import { Label } from '@ui5/webcomponents-react/dist/Label';
 import { Form } from '@ui5/webcomponents-react/dist/Form';
 import { FormItem } from '@ui5/webcomponents-react/dist/FormItem';
 import { FormGroup } from '@ui5/webcomponents-react/dist/FormGroup';
 import { FlexBox } from '@ui5/webcomponents-react/dist/FlexBox';
+import { DynamicPageTitle } from '@ui5/webcomponents-react/dist/DynamicPageTitle';
+import { DynamicPageHeader } from '@ui5/webcomponents-react/dist/DynamicPageHeader';
 import { ValueState } from '@ui5/webcomponents-react/dist/ValueState';
 import { ObjectStatus } from '@ui5/webcomponents-react/dist/ObjectStatus';
 import { FlexBoxDirection } from '@ui5/webcomponents-react/dist/FlexBoxDirection';
+import { FlexBoxAlignItems } from '@ui5/webcomponents-react/dist/FlexBoxAlignItems';
+import { FlexBoxWrap } from '@ui5/webcomponents-react/dist/FlexBoxWrap';
 import { DocsHeader } from '@shared/stories/DocsHeader';
 import '@ui5/webcomponents-icons/dist/activate.js';
 import SampleImage from './DemoImage.png';
@@ -27,58 +32,70 @@ import '@ui5/webcomponents-icons/dist/wrench.js';
   component={ObjectPage}
   subcomponents={{ ObjectPageSection, ObjectPageSubSection }}
   argTypes={{
+    headerTitle: { control: { disable: true } },
     headerContent: { control: { disable: true } },
-    breadcrumbs: { control: { disable: true } },
-    headerActions: { control: { disable: true } },
-    children: { control: { disable: true } },
-    keyInfos: { control: { disable: true } }
+    footer: { control: { disable: true } },
+    children: { control: { disable: true } }
   }}
   args={{
     mode: ObjectPageMode.Default,
-    title: 'Denise Smith',
-    subTitle: 'Senior UI Developer',
     showHideHeaderButton: true,
     selectedSectionId: 'goals',
     headerContentPinnable: true,
     imageShapeCircle: true,
-    headerContent: (
-      <>
-        <FlexBox direction={FlexBoxDirection.Column}>
-          <Link>+33 6 4512 5158</Link>
-          <Link href="mailto:ui5-webcomponents-react@sap.com">DeniseSmith@sap.com</Link>
-          <Link href="https://github.com/SAP/ui5-webcomponents-react">
-            https://github.com/SAP/ui5-webcomponents-react
-          </Link>
-        </FlexBox>
-        <FlexBox direction={FlexBoxDirection.Column} style={{ width: '200px' }}>
-          <Label>Achieved Goals</Label>
-          <ProgressIndicator value={80} valueState={ValueState.Success} />
-        </FlexBox>
-        <FlexBox direction={FlexBoxDirection.Column}>
-          <Label>San Jose</Label>
-          <Label>California, USA</Label>
-        </FlexBox>
-      </>
-    ),
-    breadcrumbs: (
-      <Breadcrumbs currentLocationText="Employee Details">
-        <Link>Manager Cockpit</Link>
-        <Link>My Team</Link>
-      </Breadcrumbs>
-    ),
-    headerActions: [
-      <Button key="1" design={ButtonDesign.Emphasized}>
-        Primary Action
-      </Button>,
-      <Button key="2">Action</Button>
-    ],
-    keyInfos: <ObjectStatus state={ValueState.Success}>employed</ObjectStatus>,
     image: SampleImage,
     style: { height: '700px' },
-    className: '',
-    tooltip: '',
-    slot: '',
-    ref: null
+    footer: (
+      <Bar
+        design={BarDesign.FloatingFooter}
+        endContent={
+          <>
+            <Button design={ButtonDesign.Positive}>Accept</Button>
+            <Button design={ButtonDesign.Negative}>Reject</Button>
+          </>
+        }
+      />
+    ),
+    headerTitle: (
+      <DynamicPageTitle
+        showSubheadingRight
+        heading="Denise Smith"
+        subheading="Senior UI Developer"
+        actions={
+          <>
+            <Button key="1" design={ButtonDesign.Emphasized}>
+              Primary Action
+            </Button>
+            <Button key="2">Action</Button>
+          </>
+        }
+        breadcrumbs={
+          <Breadcrumbs currentLocationText="Employee Details">
+            <Link>Manager Cockpit</Link>
+            <Link>My Team</Link>
+          </Breadcrumbs>
+        }
+      >
+        <ObjectStatus state={ValueState.Success}>employed</ObjectStatus>
+      </DynamicPageTitle>
+    ),
+    headerContent: (
+      <DynamicPageHeader>
+        <FlexBox wrap={FlexBoxWrap.Wrap} alignItems={FlexBoxAlignItems.Center}>
+          <FlexBox direction={FlexBoxDirection.Column}>
+            <Link>+33 6 4512 5158</Link>
+            <Link href="mailto:ui5-webcomponents-react@sap.com">DeniseSmith@sap.com</Link>
+            <Link href="https://github.com/SAP/ui5-webcomponents-react">
+              https://github.com/SAP/ui5-webcomponents-react
+            </Link>
+          </FlexBox>
+          <FlexBox direction={FlexBoxDirection.Column} style={{ padding: '10px' }}>
+            <Label>San Jose</Label>
+            <Label>California, USA</Label>
+          </FlexBox>
+        </FlexBox>
+      </DynamicPageHeader>
+    )
   }}
 />
 

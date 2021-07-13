@@ -4,17 +4,19 @@ exports[`ObjectPageSubSection Render without Crashing 1`] = `
 <DocumentFragment>
   <div
     class="ObjectPageSubSection-objectPageSubSection"
-    data-component-name="ObjectPageSubSection"
     id="ObjectPageSubSection-test"
     role="region"
+    tabindex="-1"
   >
     <div
       aria-level="4"
       class="ObjectPageSubSection-objectPageSubSectionHeaderTitle"
+      data-component-name="ObjectPageSubSectionHeading"
       role="heading"
     />
     <div
       class="ObjectPageSubSection-subSectionContent"
+      data-component-name="ObjectPageSubSectionContent"
     />
   </div>
 </DocumentFragment>
