@@ -30,19 +30,7 @@ import { DocsHeader } from '@shared/stories/DocsHeader';
 ## Example
 
 <Canvas>
-  <Story name="Default">
-    {(props) => (
-      <VariantManagement
-        closeOnItemSelect={props.closeOnItemSelect}
-        selectedKey={props.selectedKey}
-        variantItems={props.variantItems}
-        onSelect={props.onSelect}
-        placement={props.placement}
-        level={props.level}
-        disabled={props.disabled}
-      />
-    )}
-  </Story>
+  <Story name="Default">{(props) => <VariantManagement {...props} />}</Story>
 </Canvas>
 
 ## Properties
